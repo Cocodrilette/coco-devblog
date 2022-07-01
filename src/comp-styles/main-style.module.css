@@ -1,3 +1,23 @@
+@keyframes appear-from-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear-from-bottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,11 +35,20 @@
     max-width: 500px;
     text-align: center;
     font-size: 3em;
+
+    animation: appear-from-left 250ms ease-in-out;
 }
 
 .mainContent {
     margin: 0 10%;
     background-color: lightpink;
+}
+
+.contentParagraph {
+    font-size: 1.3em;
+    text-align: justify;
+    line-height: 1.3em;
+    margin-bottom: 10px;
 }
 
 .navbar {
@@ -31,6 +60,8 @@
     left: 0;
     width: 100%;
     background-color: lightcoral;
+
+    animation: appear-from-bottom 300ms ease-in-out;
 }
 .navbarItem {
     list-style: none;
@@ -58,7 +89,11 @@
     .mainContent {
         margin: auto 5%;
     }
+    .contentParagraph {
+        text-align: justify;
+        font-size: 1.1em;
+    }
     .navbarItem {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }

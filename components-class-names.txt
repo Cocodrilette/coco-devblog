@@ -9,6 +9,9 @@ titulo principal <h1>
 contenedor del contenido principal <main>
 	> mainContent
 ---
+parrafo de contenido <p>
+	> contentParagraph
+---
 barra de navegación (nav) <nav>
 	> navBar
 ---

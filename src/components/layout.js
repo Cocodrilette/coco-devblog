@@ -1,6 +1,6 @@
-import React, { Children } from "react"
-import { Link } from 'gatsby'
-import { mainContainer, mainTitle, mainContent, navbar, navbarItem, navbarLinkText } from '../comp-styles/main-style.module.css'
+import React from "react"
+import { mainContainer, mainTitle, mainContent } from '../comp-styles/main-style.module.css'
+import Navbar from '../components/navbar' 
 
 const Layout = ({ pageTitle, pageContent }) => {
     // This is a JavaScript technique called destructuring. 
@@ -20,16 +20,7 @@ const Layout = ({ pageTitle, pageContent }) => {
                 >{pageTitle}</h1>
                 {pageContent}
             </main>
-            <nav
-                className={navbar}>
-                <li
-                    className={navbarItem}>
-                    {/* This Link is a custom Gatsby component */}
-                    <Link to="/" className={navbarLinkText}>Home</Link></li>
-                <li
-                    className={navbarItem}>
-                    <Link to="/about" className={navbarLinkText}>About</Link></li>
-            </nav>
+            <Navbar></Navbar>
         </div>
     )
 }
