@@ -1,0 +1,16 @@
+COMPONENTS CLASS NAMES
+
+contenedor principal <div>
+	> mainContainer
+---
+titulo principal <h1>
+	> mainTitle
+---
+contenedor del contenido principal <main>
+	> mainContent
+---
+barra de navegación (nav) <nav>
+	> navBar
+---
+item de la barra de la nav <li>
+	> navbarItem
