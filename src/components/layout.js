@@ -1,8 +1,8 @@
-import React from "react"
+import * as React from "react"
 import { mainContainer, mainTitle, mainContent } from '../comp-styles/main-style.module.css'
 import Navbar from '../components/navbar' 
 
-const Layout = ({ pageTitle, pageContent }) => {
+const Layout = ({ pageTitle, children }) => {
     // This is a JavaScript technique called destructuring. 
     // It’s basically a shortcut for defining variables based on 
     // an object’s properties. 
@@ -18,7 +18,7 @@ const Layout = ({ pageTitle, pageContent }) => {
                 <h1
                     className={mainTitle}
                 >{pageTitle}</h1>
-                {pageContent}
+                {children}
             </main>
             <Navbar></Navbar>
         </div>

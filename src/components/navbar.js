@@ -9,6 +9,7 @@ class Navbar extends React.Component {
             navbarRoutes: [
                 { name: "Home", path: "/" },
                 { name: "About", path: "/about" },
+                { name: "Projects", path: "/projects" }
             ]
         };
     }

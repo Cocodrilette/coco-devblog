@@ -1,19 +1,20 @@
 // Step 1: Import React
 import * as React from 'react'
 import Layout from '../components/layout'
-import contentToParagraph from '../components/utils/contentToParagraph'
+import { contentParagraph, contentImage } from '../comp-styles/main-style.module.css'
+import { StaticImage } from 'gatsby-plugin-image'
 // Step 2: Define your component
 const IndexPage = () => {
-  const pageContent = [
-    'Non minim amet aliquip sint consectetur magna. Amet enim aute proident occaecat incididunt irure. Ut do laboris irure mollit proident duis magna incididunt. Eiusmod consectetur duis ipsum ut eu aute anim mollit officia id dolore mollit ullamco qui. Incididunt fugiat irure consequat minim fugiat minim anim. Tempor aliqua reprehenderit veniam consectetur.',
-    'Ut adipisicing voluptate magna commodo aliquip commodo duis nisi minim exercitation dolore. Ipsum nisi tempor dolore sint. Reprehenderit aute cupidatat aute ex Lorem labore veniam sint officia irure dolor cupidatat consectetur. Non dolor voluptate ad excepteur non veniam laborum nostrud.'
-
-  ]
   return (
-    <Layout 
-    pageTitle="Home"
-    pageContent={contentToParagraph(pageContent)}
-    >
+    <Layout pageTitle="Home">
+      <StaticImage
+        src='../images/cyberpunk-dude.jpg'
+        alt='A very cool cyberpunk dude with a very fancy glasses sitting on the floor using a very cool computer'
+        className={contentImage}
+      />
+      <p className={contentParagraph}>
+        Labore dolor excepteur proident enim. Nisi amet in elit commodo irure dolor veniam sint non ut. Amet dolore aute cillum proident. Commodo incididunt anim reprehenderit quis laboris sint ex est eu proident. In eu nisi aliqua ea sint exercitation. Quis tempor consequat occaecat irure reprehenderit.
+      </p>
     </Layout>
   )
 }

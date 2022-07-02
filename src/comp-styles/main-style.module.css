@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @keyframes appear-from-left {
     0% {
         opacity: 0;
@@ -25,8 +27,9 @@
 }
 
 .mainContainer {
+    height: auto;
     background-color: blanchedalmond;
-    font-family: sans-serif;
+    font-family: 'Montserrat' ,sans-serif;
 }
 
 .mainTitle {
@@ -35,23 +38,33 @@
     max-width: 500px;
     text-align: center;
     font-size: 3em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 
     animation: appear-from-left 250ms ease-in-out;
 }
 
 .mainContent {
     margin: 0 10%;
+    height: auto;
     background-color: lightpink;
+}
+
+.contentImage {
+    margin-bottom: 20px;
 }
 
 .contentParagraph {
     font-size: 1.3em;
-    text-align: justify;
     line-height: 1.3em;
     margin-bottom: 10px;
+
+    animation: appear-from-bottom 250ms ease-in-out;
 }
 
 .navbar {
+    text-transform: uppercase;
     display: flex;
     position: fixed;
     justify-content: start;
@@ -90,8 +103,12 @@
         margin: auto 5%;
     }
     .contentParagraph {
-        text-align: justify;
-        font-size: 1.1em;
+        font-weight: 400;
+        font-size: 1em;
+    }
+    .navbar {
+        justify-content: end;
+        flex-direction: row-reverse;
     }
     .navbarItem {
         font-size: 1.1em;
