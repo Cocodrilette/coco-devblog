@@ -1,5 +1,8 @@
 COMPONENTS CLASS NAMES
 
+logo del header <StaticImage>
+	> headerLogo
+---
 contenedor principal <div>
 	> mainContainer
 ---
@@ -18,10 +21,10 @@ barra de navegación (nav) <nav>
 item de la barra de la nav <li>
 	> navbarItem
 ---
-lista de posts <ul>
-	> pageList
+lista de posts <article>
+	> postArticle
 ---
-item de lista <li> > <div>
+item de lista <article> > <div>
 	> listItem
 ---
 titulo del post en la lista <h3>
