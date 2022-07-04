@@ -17,3 +17,9 @@ barra de navegación (nav) <nav>
 ---
 item de la barra de la nav <li>
 	> navbarItem
+---
+lista de posts <ul>
+	> pageList
+---
+item de lista <li>
+	> listItem

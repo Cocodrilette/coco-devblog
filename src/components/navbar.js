@@ -8,8 +8,8 @@ class Navbar extends React.Component {
         this.state = {
             navbarRoutes: [
                 { name: "Home", path: "/" },
-                { name: "About", path: "/about" },
-                { name: "Projects", path: "/projects" }
+                { name: "Posts", path: "/posts" },
+                { name: "About", path: "/about" }
             ]
         };
     }

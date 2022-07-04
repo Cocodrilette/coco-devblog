@@ -1,6 +1,7 @@
 import * as React from "react"
-import { mainContainer, mainTitle, mainContent } from '../comp-styles/main-style.module.css'
-import Navbar from '../components/navbar' 
+import { siteHeader, mainContainer, mainTitle, mainContent } from '../comp-styles/main-style.module.css'
+import Navbar from '../components/navbar'
+import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ pageTitle, children }) => {
     // This is a JavaScript technique called destructuring. 
@@ -9,15 +10,26 @@ const Layout = ({ pageTitle, children }) => {
     // It’s like saying, “Take the object that gets passed into this 
     // function, and unpack its pageTitle and pageContent properties into 
     // their own variables.”
+
+    const titleData = useStaticQuery(graphql`
+    query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `)
+
     return (
-        <div
-            className={mainContainer}>
-            <title>{pageTitle}</title>
+        <div className={mainContainer}>
+            <title>{pageTitle + " - " + titleData.site.siteMetadata.title}</title>
+            <header className={siteHeader}>{titleData.site.siteMetadata.title}</header>
             <main
                 className={mainContent}>
-                <h1
-                    className={mainTitle}
-                >{pageTitle}</h1>
+                <h1 className={mainTitle}>
+                    {pageTitle}
+                </h1>
                 {children}
             </main>
             <Navbar></Navbar>

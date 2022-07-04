@@ -11,6 +11,15 @@
     }
 }
 
+@keyframes appear-from-top {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @keyframes appear-from-bottom {
     0% {
         transform: translateY(100%);
@@ -26,7 +35,30 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100%;
+    margin-bottom: 45px;
+}
+
+.siteHeader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 30px;
+    padding: 20px 10px;
+    background-color: #fff;
+    box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+
+    animation: appear-from-top 300ms ease-in-out;
+}
+
 .mainContainer {
+    margin-bottom: 200px;
     height: auto;
     background-color: blanchedalmond;
     font-family: 'Montserrat' ,sans-serif;
@@ -34,12 +66,12 @@
 
 .mainTitle {
     background-color: lightblue;
-    margin: 10px auto 20px auto;
+    margin: 50px auto 20px auto;
     max-width: 500px;
     text-align: center;
     font-size: 3em;
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 3px;
 
     animation: appear-from-left 250ms ease-in-out;
@@ -53,6 +85,8 @@
 
 .contentImage {
     margin-bottom: 20px;
+
+    animation: appear-from-bottom 250ms ease-in-out;
 }
 
 .contentParagraph {
@@ -61,6 +95,22 @@
     margin-bottom: 10px;
 
     animation: appear-from-bottom 250ms ease-in-out;
+}
+
+.pageList {
+    list-style: none;
+    margin: 40px 0 0 15px;
+
+    animation: appear-from-left 350ms ease-in-out;
+}
+
+.listItem {
+    margin-bottom: -15px;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    text-transform: capitalize;
+    letter-spacing: 2.5px;
+    font-weight: 500;
 }
 
 .navbar {
@@ -72,13 +122,16 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 45px;
     background-color: lightcoral;
 
     animation: appear-from-bottom 300ms ease-in-out;
 }
+
 .navbarItem {
     list-style: none;
     width: auto;
+    height: 100%;
     padding: 10px 20px;
     font-size: 1.5em;
     background-color: aquamarine;
@@ -96,6 +149,12 @@
 }
 
 @media screen and (max-width: 500px) {
+    body {
+        margin-bottom: 37px;
+    }
+    .siteHeader {
+        font-size: 1.1em;
+    }
     .mainTitle {
         font-size: 2em;
     }
@@ -104,13 +163,18 @@
     }
     .contentParagraph {
         font-weight: 400;
-        font-size: 1em;
+        font-size: 1.1em;
+    }
+    .listItem {
+        font-size: 1.1em;
     }
     .navbar {
         justify-content: end;
         flex-direction: row-reverse;
+        height: 37px;
     }
     .navbarItem {
         font-size: 1.1em;
+        height: 100%;
     }
 }
