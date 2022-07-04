@@ -21,5 +21,20 @@ item de la barra de la nav <li>
 lista de posts <ul>
 	> pageList
 ---
-item de lista <li>
+item de lista <li> > <div>
 	> listItem
+---
+titulo del post en la lista <h3>
+	> postListName
+---
+pubDate en la lista <span>
+	> postDate
+---
+info sobre autor y descripcion en la lista <div>
+	> postInfo
+---
+nombre del author en la lista <p>
+	> listAuthor
+---
+descripcion del post en la lista <p>
+	> listPostDescription

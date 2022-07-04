@@ -11,6 +11,7 @@ const Layout = ({ pageTitle, children }) => {
     // function, and unpack its pageTitle and pageContent properties into 
     // their own variables.”
 
+    // Here we are using useStaticQuery because we are inside of a component
     const titleData = useStaticQuery(graphql`
     query {
         site {
