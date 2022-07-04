@@ -4,7 +4,7 @@ import {
   mainContainer,
   mainTitle,
   mainContent,
-  headerLogo,
+  // headerLogo,
   themeToggle
 } from '../comp-styles/main-style.module.css'
 import Navbar from '../components/navbar'
@@ -46,7 +46,7 @@ const Layout = ({ pageTitle, children }) => {
         </div>
         <div>
           <StaticImage
-            src='../images/light-bulb-svgrepo-com.svg'
+            src='../images/nights_stay.svg'
             alt='A very cool cyberpunk dude with a very fancy glasses sitting on the floor using a very cool computer'
             className={themeToggle}
           >

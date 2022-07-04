@@ -12,10 +12,10 @@ class Navbar extends React.Component {
                 { name: "About", path: "/about" }
             ],
         };
-        this.navItem = this.state.navbarRoutes.map(function (route, index) {
+        this.navItem = this.state.navbarRoutes.map(function (route, id) {
             return (
-                <li className={navbarItem}>
-                    <Link key={index} to={route.path} className={navbarLinkText}>
+                <li key={id} className={navbarItem}>
+                    <Link to={route.path} className={navbarLinkText}>
                         {route.name}
                     </Link>
                 </li>

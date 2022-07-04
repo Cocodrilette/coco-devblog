@@ -4,16 +4,16 @@
     --backgroun-color-light: rgb(250, 250, 250);
     --backgroun-color-dark: rgb(34, 34, 34);
 
-    --secundary-color-light: rgb(250, 250, 255);
+    --secundary-color-light: rgb(175, 236, 224);
     --secundary-color-dark: rgb(24, 24, 66);
 
     --font-color-light: rgb(0, 0, 0);
     --font-color-dark: rgb(255, 255, 255);
 
-    --text-muted-color-light: rgb(140, 140, 140);
+    --text-muted-color-light: rgb(113, 113, 113);
+    --text-muted-color-dark: rgb(196, 196, 196);
 
-    --divider-color-light: var(--text-muted-color-light);
-    --divider-color-dark: rgb(0, 195, 255);
+    --link-color: rgb(175, 236, 224);
 }
 
 @keyframes appear-from-left {
@@ -58,23 +58,34 @@
 
 /* Colorify */
 body{
-    background-color: var(--backgroun-color-dark);
-    color: var(--font-color-dark);
+    background-color: var(--backgroun-color-light);
+    color: var(--font-color-light);
 }
 
 .siteHeader,
 .navbar,
 .navbarItem .navbarLinkText {
-    background-color: var(--secundary-color-dark);
-    color: var(--font-color-dark);
+    background-color: var(--secundary-color-light);
+    color: var(--font-color-light);
+}
+
+.blogPostAuthor a {
+    color: var(--font-color-light);
 }
 
 .postDate,
 .listAuthor,
-.listPostDescription {
-    color: var(--text-muted-color-dark);
+.listPostDescription,
+.blogPostPubInfo,
+.blogPostAuthor,
+.blogPostFooter {
+    color: var(--text-muted-color-light);
 }
 
+.siteHeader,
+.navbar {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
 
 * {
     margin: 0;
@@ -99,9 +110,7 @@ body {
     width: 100%;
     height: 50px;
     padding: 20px 10px;
-    box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.2);
     font-size: 2em;
-    /* animation: appear-from-top 300ms ease-in-out; */
 }
 
 .siteHeader > div {
@@ -129,13 +138,12 @@ body {
 }
 
 .mainTitle {
-    margin: 60px auto 50px auto;
+    margin: 80px auto 30px auto;
     max-width: 500px;
     text-align: center;
     font-size: 3em;
     font-weight: 500;
     text-transform: capitalize;
-    border-bottom: 1px solid var(--divider-color-dark);
 
     animation: appear-from-left 250ms ease-in-out;
 }
@@ -143,6 +151,7 @@ body {
 .mainContent {
     margin: 0 10%;
     height: auto;
+    word-spacing: 3.5px;
 }
 
 .contentImage {
@@ -162,9 +171,8 @@ body {
 .postArticle {
     height: auto;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--font-color-dark);
+    border-bottom: 3px solid var(--font-color-light);
     animation: appear-from-left 350ms ease-in-out;
-
 }
 
 .listItem {
@@ -201,6 +209,51 @@ body {
     margin-bottom: 10px;
 }
 
+.blogPostDescription,
+.blogPostContent,
+.blogPostFooter {
+    animation: appear-from-bottom 250ms ease-in-out;
+}
+
+.blogPostInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 20px;
+    word-spacing: 3px;
+}
+
+.blogPostPubInfo {
+    display: flex;
+    gap: 10px;
+    word-spacing: 3px;
+
+    animation: appear-from-left 350ms ease-in-out;
+}
+
+.blogPostAuthor a {
+    text-decoration: none;
+    border-bottom: 5px solid var(--link-color);
+    transition: all 200ms linear;
+    background-size: 0;
+}
+
+.blogPostAuthor a:hover {
+    background: var(--link-color);
+}
+
+.blogPostDescription {
+    font-style: italic;
+}
+
+.blogPostFooter {
+    margin-top: 60px;
+    border-top: 2px solid var(--text-muted-color-dark);
+    padding-top: 20px;
+    text-align: center;
+}
+
 .navbar {
     text-transform: uppercase;
     display: flex;
@@ -211,10 +264,6 @@ body {
     left: 0;
     width: 100%;
     height: 45px;
-
-    box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.2);
-
-    /* animation: appear-from-bottom 300ms ease-in-out; */
 }
 
 .navbarItem {

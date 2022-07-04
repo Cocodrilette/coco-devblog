@@ -1,14 +1,13 @@
 import * as React from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import {
     postArticle,
     listItem,
-    postListName,
     postDate,
     listAuthor,
     listPostDescription,
     postInfo
-} from '../comp-styles/main-style.module.css'
+} from '../../comp-styles/main-style.module.css'
 import { graphql } from 'gatsby'
 
 const PostsPage = ({ data }) => {
@@ -22,7 +21,7 @@ const PostsPage = ({ data }) => {
                     <span className={postDate}>
                         {post.frontmatter.datePublished}
                     </span>
-                    <h3 className={postListName}>
+                    <h3>
                         {post.frontmatter.name}
                     </h3>
                 </div>
@@ -64,13 +63,6 @@ export const query = graphql`
               }
               id
               body
-              parent {
-                ... on File {
-                  id
-                  name
-                  modifiedTime(formatString: "MMMM D, YYYY")
-                }
-              }
             }
         }
     }
