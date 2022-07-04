@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Cocodrilette Devblog",
+    title: "UnderB",
     author: "Juan Fernando Cogollo Doria",
     siteUrl: `https://www.yourdomain.tld`,
   },
