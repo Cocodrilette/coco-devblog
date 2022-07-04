@@ -10,7 +10,6 @@ import {
     postInfo
 } from '../comp-styles/main-style.module.css'
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const PostsPage = ({ data }) => {
     // I think prop only called data, I tried others variables names
