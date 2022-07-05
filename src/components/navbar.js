@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from 'gatsby'
 import { navbar, navbarItem, navbarLinkText } from '../comp-styles/main-style.module.css'
 
+
 class Navbar extends React.Component {
     constructor(props) {
         super(props);

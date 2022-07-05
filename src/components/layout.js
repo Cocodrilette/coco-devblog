@@ -7,8 +7,6 @@ import {
 } from '../comp-styles/main-style.module.css'
 import Navbar from '../components/navbar'
 import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from 'gatsby-plugin-image'
-
 
 const Layout = ({ pageTitle, children }) => {
   // This is a JavaScript technique called destructuring. 
