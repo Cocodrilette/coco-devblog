@@ -7,7 +7,6 @@ import {
   blogPostDescription,
   blogPostContent,
   blogPostFooter,
-  blogPostFigure,
   blogPostFigCaption
 } from '../../comp-styles/main-style.module.css'
 import { graphql } from 'gatsby'
@@ -30,7 +29,7 @@ const BlogPost = ({ data }) => {
             <a href={data.mdx.frontmatter.link} title="Go to Instagram">
               {data.mdx.frontmatter.author}</a></span>
         </p>
-        <figure className={blogPostFigure}>
+        <figure>
           <GatsbyImage
             image={image}
             alt={data.mdx.frontmatter.post_image_alt}
