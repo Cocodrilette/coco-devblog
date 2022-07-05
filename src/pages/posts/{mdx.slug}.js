@@ -6,12 +6,21 @@ import {
   blogPostAuthor,
   blogPostDescription,
   blogPostContent,
-  blogPostFooter
+  blogPostFooter,
+  blogPostFigure,
+  blogPostFigCaption
 } from '../../comp-styles/main-style.module.css'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const BlogPost = ({ data }) => {
+
+  const image = getImage(data.mdx.frontmatter.post_image)
+  // getImage is a helper function that takes in a File node or 
+  // an ImageSharp node and returns the gatsbyImageData object 
+  // for that node. 
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.name}>
       <div className={blogPostInfo}>
@@ -21,6 +30,20 @@ const BlogPost = ({ data }) => {
             <a href={data.mdx.frontmatter.link} title="Go to Instagram">
               {data.mdx.frontmatter.author}</a></span>
         </p>
+        <figure className={blogPostFigure}>
+          <GatsbyImage
+            image={image}
+            alt={data.mdx.frontmatter.post_image_alt}
+          />
+          <figcaption className={blogPostFigCaption}>
+            Photo Credit:{" "}
+            <a
+              href={data.mdx.frontmatter.post_image_credit_link}
+              title="Go to the image source">
+              {data.mdx.frontmatter.post_image_credit_text}
+            </a>
+          </figcaption>
+        </figure>
         <p className={blogPostDescription}>
           {data.mdx.frontmatter.description}
         </p>
@@ -41,16 +64,25 @@ export const query = graphql`
   query ($id: String) {
     mdx(id: {eq: $id}) {
       frontmatter {
-          datePublished(formatString: "MMMM D, YYYY")
-          name
-          description
-          author
-          link
+        datePublished(formatString: "MMMM D, YYYY")
+        name
+        description
+        author
+        link
+        post_image_alt
+        post_image_credit_link
+        post_image_credit_text
+        post_image {
+          id
+          childImageSharp {
+            gatsbyImageData
+          }
         }
-        body
-        parent {
-          ... on File {
-            modifiedTime(formatString: "MMMM D, YYYY")
+      }
+      body
+      parent {
+        ... on File {
+          modifiedTime(formatString: "MMMM D, YYYY")
         }
       }
     }

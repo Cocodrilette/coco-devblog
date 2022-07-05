@@ -46,11 +46,10 @@ const Layout = ({ pageTitle, children }) => {
         </div>
         <div>
           <StaticImage
-            src='../images/nights_stay.svg'
-            alt='A very cool cyberpunk dude with a very fancy glasses sitting on the floor using a very cool computer'
+            src='../images/moon-svgrepo-com.svg'
+            alt='Theme toggle icon'
             className={themeToggle}
           >
-
           </StaticImage>
         </div>
       </header>

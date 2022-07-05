@@ -16,6 +16,15 @@
     --link-color: rgb(175, 236, 224);
 }
 
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes appear-from-left {
     0% {
         opacity: 0;
@@ -74,7 +83,9 @@ body {
 }
 
 .blogPostAuthor a,
-.listPostsName a {
+.listPostsName a,
+.blogPostFigCaption a,
+.blogPostContent a {
     color: var(--font-color-light);
 }
 
@@ -83,7 +94,8 @@ body {
 .listPostDescription,
 .blogPostPubInfo,
 .blogPostAuthor,
-.blogPostFooter {
+.blogPostFooter,
+.blogPostFigCaption {
     color: var(--text-muted-color-light);
 }
 
@@ -218,10 +230,22 @@ body {
     margin-bottom: 10px;
 }
 
+.blogPostContent,
+.blogPostDescription {
+    font-size: 1.1em;
+    line-height: 25px;
+}
+
+.blogPostContent li {
+    margin-left: 10px;
+    list-style: none;
+}
+
 .blogPostDescription,
 .blogPostContent,
-.blogPostFooter {
-    animation: appear-from-bottom 250ms ease-in-out;
+.blogPostFooter,
+.blogPostPubInfo {
+    animation: appear-from-bottom 350ms ease-in-out;
 }
 
 .blogPostInfo {
@@ -237,12 +261,12 @@ body {
     display: flex;
     gap: 10px;
     word-spacing: 3px;
-
-    animation: appear-from-left 350ms ease-in-out;
 }
 
 .blogPostAuthor a,
-.listPostsName a {
+.listPostsName a,
+.blogPostFigCaption a,
+.blogPostContent a {
     text-decoration: none;
     padding: 0 2px;
     border-bottom: 5px solid var(--link-color);
@@ -251,12 +275,19 @@ body {
 }
 
 .blogPostAuthor a:hover,
-.listPostsName a:hover {
+.listPostsName a:hover,
+.blogPostFigCaption a:hover,
+.blogPostContent a:hover {
     background: var(--link-color);
 }
 
 .blogPostDescription {
     font-style: italic;
+}
+
+.blogPostFigCaption {
+    font-size: 0.9em;
+    margin-top: 5px;
 }
 
 .blogPostFooter {
@@ -308,11 +339,6 @@ body {
         font-size: 1.3em;
     }
 
-    .headerLogo {
-        height: 50px;
-        width: 50px;
-    }
-
     .themeToggle {
         height: 30px;
         width: 30px;
@@ -337,6 +363,20 @@ body {
 
     .postDate {
         font-size: 0.7em;
+    }
+
+    .postArticle {
+        font-size: 1.1em;
+    }
+
+    .blogPostPubInfo {
+        font-size: 0.85em;
+        gap: 5px;
+    }
+
+    .blogPostContent,
+    .blogPostDescription {
+    font-size: 1em;
     }
 
     .navbar {

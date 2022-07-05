@@ -58,3 +58,8 @@ info de publicacion del post <p>
 nombre del autor en el post <p> > <span>
 	> blogPostAuthor
 ---
+contenedor de la image en el post <figure>
+	> blogPostFigure
+---
+creditos al autor de la imagen en el post <figcaption>
+	> blogPostFigCaption
