@@ -5,7 +5,14 @@
   "description": "coco-devblog",
   "author": "Cocodrilette",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "UnderB",
+    "Cocodrilette",
+    "Blog sobre desarrollo web y programación",
+    "Web Develop",
+    "Programming",
+    "Javascript",
+    "React"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -22,12 +29,12 @@
     "gatsby-plugin-image": "^2.17.0",
     "gatsby-plugin-mdx": "^3.17.0",
     "gatsby-plugin-sharp": "^4.17.0",
-    "gatsby-remark-autolink-headers": "^5.17.0",
     "gatsby-remark-images": "^6.17.0",
     "gatsby-source-filesystem": "^4.17.0",
     "gatsby-transformer-remark": "^5.17.0",
     "gatsby-transformer-sharp": "^4.17.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0"
   }
 }
