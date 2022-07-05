@@ -4,8 +4,6 @@ import {
   mainContainer,
   mainTitle,
   mainContent,
-  // headerLogo,
-  themeToggle
 } from '../comp-styles/main-style.module.css'
 import Navbar from '../components/navbar'
 import { useStaticQuery, graphql } from "gatsby"
@@ -36,21 +34,7 @@ const Layout = ({ pageTitle, children }) => {
       <title>{pageTitle + " - " + titleData.site.siteMetadata.title}</title>
       <header className={siteHeader}>
         <div>
-          {/* <StaticImage
-            src='../images/cocodrilette-logo.png'
-            alt='A very cool cyberpunk dude with a very fancy glasses sitting on the floor using a very cool computer'
-            className={headerLogo}
-          >
-          </StaticImage> */}
           {titleData.site.siteMetadata.title}
-        </div>
-        <div>
-          <StaticImage
-            src='../images/moon-svgrepo-com.svg'
-            alt='Theme toggle icon'
-            className={themeToggle}
-          >
-          </StaticImage>
         </div>
       </header>
       <main
