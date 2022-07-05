@@ -27,6 +27,9 @@ lista de posts <article>
 item de lista <article> > <div>
 	> listItem
 ---
+titulo del post en la lista <h3> > <a>
+	> listPostsName
+---
 titulo del post en la lista <h3>
 	> postListName
 ---
@@ -44,3 +47,14 @@ descripcion del post en la lista <p>
 ---
 icono de cambio de teme <div>
 	> themeToggle
+---
+contenedor de infor del post <div>
+	> blogPostInfo
+---
+
+info de publicacion del post <p>
+	> blogPostPubInfo
+---
+nombre del autor en el post <p> > <span>
+	> blogPostAuthor
+---

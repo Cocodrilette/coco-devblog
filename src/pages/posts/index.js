@@ -3,12 +3,13 @@ import Layout from '../../components/layout'
 import {
     postArticle,
     listItem,
+    listPostsName,
     postDate,
     listAuthor,
     listPostDescription,
     postInfo
 } from '../../comp-styles/main-style.module.css'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 const PostsPage = ({ data }) => {
     // I think prop only called data, I tried others variables names
@@ -21,8 +22,10 @@ const PostsPage = ({ data }) => {
                     <span className={postDate}>
                         {post.frontmatter.datePublished}
                     </span>
-                    <h3>
-                        {post.frontmatter.name}
+                    <h3 className={listPostsName}>
+                        <Link to={`/posts/${post.slug}`}>
+                            {post.frontmatter.name}
+                        </Link>
                     </h3>
                 </div>
                 <div className={postInfo}>
@@ -62,7 +65,7 @@ export const query = graphql`
                 name
               }
               id
-              body
+              slug
             }
         }
     }

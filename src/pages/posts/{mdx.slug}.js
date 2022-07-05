@@ -8,7 +8,7 @@ import {
   blogPostContent,
   blogPostFooter
 } from '../../comp-styles/main-style.module.css'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const BlogPost = ({ data }) => {
@@ -18,8 +18,8 @@ const BlogPost = ({ data }) => {
         <p className={blogPostPubInfo}>
           Posted on {data.mdx.frontmatter.datePublished} by
           <span className={blogPostAuthor}>
-            <Link to={data.mdx.frontmatter.link}>
-              {data.mdx.frontmatter.author}</Link></span>
+            <a href={data.mdx.frontmatter.link} title="Go to Instagram">
+              {data.mdx.frontmatter.author}</a></span>
         </p>
         <p className={blogPostDescription}>
           {data.mdx.frontmatter.description}
@@ -38,26 +38,23 @@ const BlogPost = ({ data }) => {
 }
 
 export const query = graphql`
-query ($id: String) {
-  mdx(id: {eq: $id}) {
-    frontmatter {
-      datePublished(formatString: "MMMM D, YYYY")
-      name
-      description
-      author
-      link
-    }
-    body
-    parent {
-      ... on File {
-        id
-        name
-        modifiedTime(formatString: "MMMM D, YYYY")
+  query ($id: String) {
+    mdx(id: {eq: $id}) {
+      frontmatter {
+          datePublished(formatString: "MMMM D, YYYY")
+          name
+          description
+          author
+          link
+        }
+        body
+        parent {
+          ... on File {
+            modifiedTime(formatString: "MMMM D, YYYY")
+        }
       }
     }
   }
-}
-
 `
 
 export default BlogPost
