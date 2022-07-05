@@ -115,6 +115,16 @@ body {
     gap: 20px;
 }
 
+.siteHeader>div>a {
+    text-decoration: none;
+    color: var(--font-color-light);
+    transition: all 200ms ease-in-out;
+}
+
+.siteHeader>div>a:hover {
+    font-weight: 700;
+}
+
 .mainContainer {
     margin-bottom: 100px;
     height: auto;
@@ -290,6 +300,18 @@ body {
     text-decoration: none;
 }
 
+.navbarItem,
+.navbarItem .navbarLinkText {
+    background: black transparent;
+    transition: all 200ms ease-in-out;
+}
+
+.navbarItem:hover,
+.navbarItem:hover .navbarLinkText {
+    background: black;
+    color: white;
+}
+
 @media screen and (min-width: 1400px) {
     .mainContent {
         margin: 0 15%;
@@ -350,6 +372,8 @@ body {
         justify-content: end;
         flex-direction: row-reverse;
         height: 45px;
+        overflow-y: hidden;
+        overflow-x: auto;
     }
 
     .navbarItem {

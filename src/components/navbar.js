@@ -10,7 +10,8 @@ class Navbar extends React.Component {
             navbarRoutes: [
                 { name: "Home", path: "/" },
                 { name: "Posts", path: "/posts" },
-                { name: "About", path: "/about" }
+                { name: "About", path: "/about" },
+                { name: "Resources", path: "/resources" },
             ],
         };
         this.navItem = this.state.navbarRoutes.map(function (route, id) {

@@ -130,10 +130,20 @@ body {
     font-size: 2em;
 }
 
-.siteHeader>div {
+.siteHeader > div {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.siteHeader > div > a {
+    text-decoration: none;
+    color: var(--font-color-dark);
+    transition: all 200ms ease-in-out;
+}
+
+.siteHeader > div > a:hover {
+    font-weight: 700;
 }
 
 .headerLogo {
@@ -321,6 +331,18 @@ body {
 
 .navbarItem .navbarLinkText {
     text-decoration: none;
+}
+
+.navbarItem,
+.navbarItem .navbarLinkText {
+    background: black transparent;
+    transition: all 200ms ease-in-out;
+}
+
+.navbarItem:hover,
+.navbarItem:hover .navbarLinkText {
+    background: black;
+    color: white;
 }
 
 @media screen and (min-width: 1400px) {

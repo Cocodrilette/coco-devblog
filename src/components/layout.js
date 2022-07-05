@@ -1,11 +1,11 @@
 import * as React from "react"
 import {
-  siteHeader,
   mainContainer,
   mainTitle,
   mainContent,
 } from '../comp-styles/main-style.module.css'
-import Navbar from '../components/navbar'
+import Navbar from './navbar'
+import Header from './header'
 import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ pageTitle, children }) => {
@@ -30,11 +30,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className={mainContainer}>
       <title>{pageTitle + " - " + titleData.site.siteMetadata.title}</title>
-      <header className={siteHeader}>
-        <div>
-          {titleData.site.siteMetadata.title}
-        </div>
-      </header>
+      <Header></Header>
       <main
         className={mainContent}>
         <h1 className={mainTitle}>
