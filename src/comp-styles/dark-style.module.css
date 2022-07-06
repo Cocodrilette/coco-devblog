@@ -116,6 +116,8 @@ body {
 
 }
 
+/* CREATE THE DIVIDER */
+
 .siteHeader {
     position: fixed;
     display: flex;
@@ -182,8 +184,7 @@ body {
 }
 
 .contentImage {
-    margin-bottom: 20px;
-
+    margin-bottom: 40px;
     animation: appear-from-bottom 250ms ease-in-out;
 }
 

@@ -7,7 +7,8 @@ import {
   blogPostDescription,
   blogPostContent,
   blogPostFooter,
-  blogPostFigCaption
+  blogPostFigCaption,
+  divider
 } from '../../comp-styles/main-style.module.css'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -29,24 +30,25 @@ const BlogPost = ({ data }) => {
             <a href={data.mdx.frontmatter.link} title="Go to Instagram">
               {data.mdx.frontmatter.author}</a></span>
         </p>
-        <figure>
-          <GatsbyImage
-            image={image}
-            alt={data.mdx.frontmatter.post_image_alt}
-          />
-          <figcaption className={blogPostFigCaption}>
-            Photo Credit:{" "}
-            <a
-              href={data.mdx.frontmatter.post_image_credit_link}
-              title="Go to the image source">
-              {data.mdx.frontmatter.post_image_credit_text}
-            </a>
-          </figcaption>
-        </figure>
-        <p className={blogPostDescription}>
-          {data.mdx.frontmatter.description}
-        </p>
       </div>
+      <figure>
+        <GatsbyImage
+          image={image}
+          alt={data.mdx.frontmatter.post_image_alt}
+        />
+        <figcaption className={blogPostFigCaption}>
+          Photo Credit:{" "}
+          <a
+            href={data.mdx.frontmatter.post_image_credit_link}
+            title="Go to the image source">
+            {data.mdx.frontmatter.post_image_credit_text}
+          </a>
+        </figcaption>
+      </figure>
+      <div className={divider}></div>
+      <p className={blogPostDescription}>
+        {data.mdx.frontmatter.description}
+      </p>
       <div className={blogPostContent}>
         <MDXRenderer>
           {data.mdx.body}

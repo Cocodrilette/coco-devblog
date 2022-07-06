@@ -28,30 +28,35 @@
     }
 }
 
-@keyframes appear-from-top {
+@keyframes appear-from-right {
     0% {
-        transform: translateY(-100%);
+        transform: translateX(100%);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
-
-@keyframes appear-from-bottom {
+/* @keyframes appear {
     0% {
-        transform: translateY(100%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateY(0);
+        opacity: 1;
     }
-}
+} */
 
 /* Colorify */
 body {
     background-color: var(--backgroun-color-light);
     color: var(--font-color-light);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .siteHeader,
@@ -64,7 +69,9 @@ body {
 .blogPostAuthor a,
 .listPostsName a,
 .blogPostFigCaption a,
-.blogPostContent a {
+.blogPostContent a,
+.contentParagraph a,
+ul li a {
     color: var(--font-color-light);
 }
 
@@ -93,6 +100,14 @@ body {
     height: 100%;
     margin-bottom: 45px;
 
+}
+
+.divider {
+    height: 4px;
+    margin: 20px 0 40px 0;
+    background-color: var(--text-muted-color-light);
+
+    animation: appear-from-right 450ms ease-in-out;
 }
 
 .siteHeader {
@@ -142,24 +157,29 @@ body {
     animation: appear-from-left 250ms ease-in-out;
 }
 
+.pageSubtitle {
+    margin: 40px 0 20px 0;
+
+    animation: appear-from-left 250ms ease-in-out;
+}
+
 .mainContent {
     margin: 0 10%;
     height: auto;
     word-spacing: 3.5px;
 }
 
-.contentImage {
-    margin-bottom: 20px;
-
-    animation: appear-from-bottom 250ms ease-in-out;
+figure {
+    animation: appear-from-left 450ms ease-in-out;
 }
 
-.contentParagraph {
+.contentParagraph,
+ul li {
     font-size: 1.3em;
     line-height: 1.3em;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 
-    animation: appear-from-bottom 250ms ease-in-out;
+    animation: appear-from-left 350ms ease-in-out;
 }
 
 .postArticle {
@@ -210,7 +230,7 @@ body {
 .blogPostContent,
 .blogPostDescription {
     font-size: 1.1em;
-    line-height: 25px;
+    line-height: 22px;
 }
 
 .blogPostContent li {
@@ -222,7 +242,7 @@ body {
 .blogPostContent,
 .blogPostFooter,
 .blogPostPubInfo {
-    animation: appear-from-bottom 350ms ease-in-out;
+    animation: appear-from-left 350ms ease-in-out;
 }
 
 .blogPostInfo {
@@ -243,7 +263,9 @@ body {
 .blogPostAuthor a,
 .listPostsName a,
 .blogPostFigCaption a,
-.blogPostContent a {
+.blogPostContent a,
+.contentParagraph a,
+ul li a {
     text-decoration: none;
     padding: 0 2px;
     border-bottom: 5px solid var(--link-color);
@@ -254,7 +276,9 @@ body {
 .blogPostAuthor a:hover,
 .listPostsName a:hover,
 .blogPostFigCaption a:hover,
-.blogPostContent a:hover {
+.blogPostContent a:hover,
+.contentParagraph a:hover,
+ul li a:hover {
     background: var(--link-color);
 }
 
@@ -328,11 +352,6 @@ body {
         font-size: 1.3em;
     }
 
-    .themeToggle {
-        height: 30px;
-        width: 30px;
-    }
-
     .mainTitle {
         font-size: 2em;
     }
@@ -341,7 +360,8 @@ body {
         margin: auto 5%;
     }
 
-    .contentParagraph {
+    .contentParagraph,
+    ul li {
         font-weight: 400;
         font-size: 1.1em;
     }
