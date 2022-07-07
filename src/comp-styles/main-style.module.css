@@ -372,34 +372,34 @@ ul li a:hover {
         margin: auto 5%;
     }
 
-    .blogPostContent li {
-        margin-left: 30px;
-    }
-
+    
     .contentParagraph,
     ul li {
         font-weight: 400;
         font-size: 1.1em;
     }
-
+    
     .listItem {
         font-size: 1.1em;
     }
-
+    
     .postDate {
         font-size: 0.7em;
     }
-
+    
     .postArticle {
         font-size: 1.1em;
     }
-
+    
     .blogPostPubInfo {
         flex-wrap: wrap;
-        font-size: 0.85em;
+        font-size: 0.75em;
         gap: 5px;
     }
-
+    
+    .blogPostContent li {
+        margin-left: 30px;
+    }
     .blogPostContent,
     .blogPostDescription,
     .blogPostContent ul li {
