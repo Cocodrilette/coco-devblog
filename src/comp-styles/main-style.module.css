@@ -372,7 +372,6 @@ ul li a:hover {
         margin: auto 5%;
     }
 
-    
     .contentParagraph,
     ul li {
         font-weight: 400;
@@ -391,9 +390,14 @@ ul li a:hover {
         font-size: 1.1em;
     }
     
+    .listPostDescription,
+    .listAuthor {
+        font-size: 0.8em;
+    }
+
     .blogPostPubInfo {
         flex-wrap: wrap;
-        font-size: 0.75em;
+        font-size: 0.85em;
         gap: 5px;
     }
     
