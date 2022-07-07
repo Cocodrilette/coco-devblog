@@ -103,10 +103,6 @@ body {
 
 }
 
-a {
-    flex-wrap: wrap;
-}
-
 .divider {
     height: 4px;
     margin: 20px 0 40px 0;
@@ -316,7 +312,8 @@ ul li a:hover {
 
 .blogPostContent hr {
     margin: 20px 0;
-    border: 1px solid var(--text-muted-color-light);
+    height: 2px;
+    background-color: var(--text-muted-color-light);
 }
 
 .blogPostFooter {
