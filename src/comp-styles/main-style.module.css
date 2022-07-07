@@ -103,6 +103,10 @@ body {
 
 }
 
+a {
+    flex-wrap: wrap;
+}
+
 .divider {
     height: 4px;
     margin: 20px 0 40px 0;
@@ -142,7 +146,7 @@ body {
     font-weight: 700;
 }
 
-.siteHeader img {
+.siteHeader div img {
     width: 45px;
     margin-right: 5px;
 }
@@ -378,7 +382,7 @@ ul li a:hover {
         font-size: 1.7em;
     }
 
-    .siteHeader img {
+    .siteHeader div img {
         width: 35px;
     }
 
