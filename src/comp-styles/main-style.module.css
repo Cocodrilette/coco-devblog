@@ -216,26 +216,38 @@ ul li {
 }
 
 .listAuthor {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
 .listPostDescription {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
+.blogPostContent p {
+    margin: 10px 0;
+}
+
+.blogPostContent h2 {
+    margin: 30px 0 20px 0;
+}
+
 .blogPostContent,
-.blogPostDescription {
-    font-size: 1.1em;
+.blogPostDescription,
+.blogPostContent ul li {
+    font-size: 1.2em;
     line-height: 22px;
 }
 
 .blogPostContent li {
-    margin-left: 10px;
-    list-style: none;
+    margin-left: 40px;
+}
+
+.blogPostContent ul li{
+    list-style: disc;
 }
 
 .blogPostDescription,
@@ -360,6 +372,10 @@ ul li a:hover {
         margin: auto 5%;
     }
 
+    .blogPostContent li {
+        margin-left: 30px;
+    }
+
     .contentParagraph,
     ul li {
         font-weight: 400;
@@ -379,12 +395,14 @@ ul li a:hover {
     }
 
     .blogPostPubInfo {
+        flex-wrap: wrap;
         font-size: 0.85em;
         gap: 5px;
     }
 
     .blogPostContent,
-    .blogPostDescription {
+    .blogPostDescription,
+    .blogPostContent ul li {
         font-size: 1em;
     }
 

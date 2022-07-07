@@ -49,11 +49,12 @@ const BlogPost = ({ data }) => {
       <p className={blogPostDescription}>
         {data.mdx.frontmatter.description}
       </p>
-      <div className={blogPostContent}>
+      <div className={divider}></div>
+      <article className={blogPostContent}>
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>
-      </div>
+      </article>
       <div className={blogPostFooter}>
         Last update on {data.mdx.parent.modifiedTime}
       </div>
