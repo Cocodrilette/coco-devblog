@@ -257,6 +257,21 @@ ul li {
     list-style: disc;
 }
 
+.blogPostContent ul li p {
+    font-size: 0.8em;
+}
+
+table {
+    border: 1px solid var(--font-color-light);
+    margin: 30px auto;
+    padding: 10px;
+}
+
+tr {
+    width: auto;
+    text-align: center;
+}
+
 .blogPostDescription,
 .blogPostContent,
 .blogPostFooter,
@@ -423,6 +438,11 @@ ul li a:hover {
     .blogPostContent li {
         margin-left: 30px;
     }
+
+    .blogPostContent ul li p {
+        font-size: 1em;
+    }
+
     .blogPostContent,
     .blogPostDescription,
     .blogPostContent ul li {
