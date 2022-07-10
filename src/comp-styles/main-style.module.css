@@ -3,6 +3,7 @@
 :root {
     --backgroun-color-light: rgb(240, 240, 240);
     --backgroun-color-dark: rgb(34, 34, 34);
+    --code-background-color: rgb(32, 32, 36);
 
     --secundary-color-light: rgb(175, 236, 224);
     --secundary-color-dark: rgb(24, 24, 66);
@@ -329,6 +330,14 @@ ul li a:hover {
     margin: 20px auto; 
 }
 
+.blogPostContent code {
+    font-size: 1.2em;
+    background-color: var(--code-background-color);
+    color: var(--font-color-dark);
+    padding: 2px 7px;
+    border-radius: 5px;
+}
+
 .blogPostContent,
 .blogPostDescription,
 .blogPostContent ul li {
@@ -388,6 +397,9 @@ ul li a:hover {
 @media screen and (min-width: 1400px) {
     .mainContent {
         margin: 0 15%;
+    }
+    .mainTitle{
+        max-width: 1000px;
     }
 }
 
