@@ -11,38 +11,81 @@ post_image_credit_link: "https://unsplash.com/es/@lautaroandreani"
 ---
 ## Antes de empezar
 
-Lo primero que tenemos que hacer es no ser como yo, y empezar a programar sin pensar y sin investigar. Por una parte, para no perder el tiempo improvisando una solución que no llegan, por no recordar un método que lo hace en una sola línea. *En fin,  para hacer una licencia de perreo intenso, téngase en cuenta que,*
+Una vez nos tomamos el tiempo para pensar lo que tenemos que hacer, podemos imaginar unos requisitos minímos para nuestra aplicación. Yo pensé en que estos podrían ser algunos
 
 1. Debe ser personalizable.
 2. Debe poder recibir los datos del usuario y hacer algo. Renderizarlos dinámicamente.
 3. Se debe poder guardar o descartar una licencia.
-4. La licencia debe tener un código QR, integrado de manera... prodriamls decir, de manera espectacular,  para ver la licencia.
+4. La licencia debe tener un código QR, integrado de manera... prodriamos decir,  espectacular,  para ver la licencia.
 5. Debe haber un menú para ver las licencias guardadas y poder borrarlas. Podríamos dejar que se editaran, pero sería mejor estimular la conservación. Haremos las dos para que podamos decidir cómo queda mejor.
 6. Podrían guardarse con diferentes valores, sin repetir nombres para guardar licencias para compartir con los amigos😎.
 7. Podríamos pedir el nickname del usuario, para personalizar la interfaz.
 8. Usar los datos almacenados únicamente para mostrárselos al usuario.
-Ahora que tenemos unos requisitos mínimos, solo podemos mejorar... mejor que improvisar. Otra cosa es que cuando estoy escribiendo esto, no tengo todos esos problemas resueltos. A lo mejor tengo resuelto uno. Pero empecemos.
+
+Ahora que tenemos unos requisitos mínimos, solo podemos mejorar... mejor que improvisar. Todavía no sé como lo vamos hacer, pero empecemos a investigar.
 
 ## Prototipo
 
-Intenté usar [Figma](https://www.figma.com/) para prototipar el projeto antes de empezar a programar nada. El resultado final, y lo que haremos en este tutorial, es este.
+El otro día intenté usar [Figma](https://www.figma.com/) para prototipar el projeto antes de empezar a programar nada. El resultado final, y lo que interaremos conseguir (y mejorar) en este tutorial, esto
 
 ![](https://i.imgur.com/trnvNMT.png)
 
 ## Empezando
 
-**Voy a asumir que conoces lo básico de Javascript (si no es así te recomiendo [ver este tutorial antes de continuar.](https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps)). Y que sabes lo que es React y las UI basadas en componentes**. Sin embargo, podras seguir este tutorial, aún si no estas familizarizado con React, pero te recomiendo mucho [ver este tutorial](https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started) antes de comenzar.
+*Te recomiendo familiarizarte con Javascript para que sigas este tutorial sindiendote más comode. Te recomiendo el [curso completo de Javascript de MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps), o el curso de freeCodeCamp. Yo estoy aprendiendo con ellos. También te recomiendo conocer los conceptos básicos de React (estados, JSX, componentes, propiedades, etc.). Puedes revisar la [introducción a React en MDN](https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started) también.*
 
-Lo primero que tenemos que hace es crear el proyecto. Y teniendo en cuenta los problemas que tenemos que resolver, diseñar la arquitectura del directorio. 
+Teniendo Node.js instalado en nuestro sistema, ejecutamos el comando `npx create-react-app` para crear el esqueleto de nuestra aplicación. Una vez descargados e instalados todos los paquetes nos queda algo como esto
 
-Para hacer lo primero, creamos nuestro directorio de trabajo, y usamos el comando `npm create-react-app`. Este nos crea los subdirectorio y los archivos necesarios para nuestro projecto. 
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   ├── favicon.ico [*]
+│   ├── index.html
+│   ├── logo192.png [*]
+│   ├── logo512.png [*]
+│   ├── manifest.json
+│   └── robots.txt
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg [*]
+    ├── serviceWorker.js
+    └── setupTests.js
 
-Para este proyecto vamos a estar usando la librería [React Router](https://reactrouter.com/) para que nuestros menús, opciones, etc., sean páginas, cada una con una ruta. Para integrar [IndexDB](https://developer.mozilla.org/es/docs/Web/API/IndexedDB_API) a nuestro projecto vamos a tener una función global desde donde los componentes puedan consumir, como una backend remoto, pero local. 
+> Los elementos marcados con [*] los borramos porque elementos de la aplicación inicial de React y no los necesitamos.
 
-También tendremos que construir las funciones para cambiar el tema de la licencia entre algunos estitlos, que también habra que diseñar. Y la función que genere el codigo QR y lo inserte en la licencia.
+Para conocer el funcionamiento de `create react app`, en su documentación encontraras información detallada. 
 
-Vamos con el primer paso,
+En cuanto a nuestra aplicación, así será la distribución del 
 
-## 1. El directorio.
+## 1. Directorio.
 
-*Pronto encontraras una nueva actualición. Gracias por la paciencia 🙏*.
+Teniendo como referencia la estrutura básica. [Recordemos nuestro problemas](Antes de empezar). Nuestra aplicación debe poder, 
+
+1. Personalizar la licencia
+2. Renderizar datos obtenidos de un formulario.
+3. Guardar o descartar un formulario.
+4. Recibir el código QR de manera dinámica según la url proporcionada por el usuario.
+5.  Mostrar las licencias guardadas y permitir editar o borrar.
+6. Debe poder compartirse la licencia como url. 
+7. - Aqui iba personalizar la interfaz con el nombre del usuario, pero lo descarté -
+
+Estuve probando algunas cosas y al final terminé con algo así, 
+
+![Estructura del directorio](https://i.imgur.com/M9XOju3.png)
+
+que creo que va a permitir navegar mejor entre archivos, y lo mejor de todo, nos va a permitir que el código que escribamos, podamos usarlo en otras aplicaciones facilmente, y además nos va ayudar a cambiar el estilo de la licencia mientras el resto de la aplicación permanece igual. No te procupes por lo que no veas, eso quiere decir que permance exactamente igual a como estaba antes.
+
+Haremos algunos cambios, para manejar algunas partes de nuestra aplicación como páginas independientes. Para hacer esto tendremos primero que crear una barra de navegación que nos permita movernos entre páginas, resolviendo así el problema de 
+
+## La navegación
+
+*Imagina como harias para dividir tu aplicación en partes que puedan usarse en otra solo con copiar, pegar e importar.*
+
+*Este capítulo se está escribiendo...*
