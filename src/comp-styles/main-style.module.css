@@ -322,8 +322,12 @@ ul li a:hover {
 }
 
 .blogPostContent img {
-    max-width: 350px;
+    max-width: 100%;
     margin: 20px auto; 
+}
+
+.blogPostContent p > img {
+    background-color: red;
 }
 
 .blogPostContent code {
@@ -459,10 +463,6 @@ ul li a:hover {
 
     .blogPostContent ul li {
         font-size: inherit;
-    }
-
-    .blogPostContent img {
-        min-width: 100%;
     }
 
     .blogPostContent,
