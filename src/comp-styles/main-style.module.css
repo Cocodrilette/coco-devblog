@@ -251,10 +251,6 @@ ul li {
     list-style: disc;
 }
 
-.blogPostContent ul li p {
-    font-size: 0.8em;
-}
-
 table {
     border: 1px solid var(--font-color-light);
     margin: 30px auto;
@@ -339,10 +335,13 @@ ul li a:hover {
 }
 
 .blogPostContent,
-.blogPostDescription,
-.blogPostContent ul li {
+.blogPostDescription {
     font-size: 1.3em;
     line-height: 28px;
+}
+
+.blogPostContent ul li {
+    font-size: inherit;
 }
 
 .blogPostFooter {
@@ -458,8 +457,8 @@ ul li a:hover {
         margin-left: 30px;
     }
 
-    .blogPostContent ul li p {
-        font-size: 1em;
+    .blogPostContent ul li {
+        font-size: inherit;
     }
 
     .blogPostContent img {
