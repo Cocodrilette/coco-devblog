@@ -10,6 +10,9 @@ post_image_credit_text: "Lautaro Andreani"
 post_image_credit_link: "https://unsplash.com/es/@lautaroandreani"
 ---
 ### [Ve el estado actual del proyecto](https://github.com/Cocodrilette/licencia-de-perreo)
+---
+### [Aqui puedes ver una versión simplificada de esta página](http://simp.ly/p/QKkrFl)
+---
 
 ## Antes de empezar
 
@@ -34,21 +37,22 @@ El otro día intenté usar [Figma](https://www.figma.com/) para prototipar el pr
 
 ## Empezando
 
-*Te recomiendo familiarizarte con Javascript para que sigas este tutorial sindiendote más comode. Te recomiendo el [curso completo de Javascript de MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps), o el curso de freeCodeCamp. Yo estoy aprendiendo con ellos. También te recomiendo conocer los conceptos básicos de React (estados, JSX, componentes, propiedades, etc.). Puedes revisar la [introducción a React en MDN](https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started) también.*
+*Te recomiendo familiarizarte con Javascript para que sigas este tutorial sindiendote más comode. Te recomiendo el [curso completo de Javascript de MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps), o el curso de [freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/). Yo estoy aprendiendo con ellos. También te recomiendo conocer los conceptos básicos de React (estados, JSX, componentes, propiedades, etc.). Puedes revisar la [introducción a React en MDN](https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started) también.*
 
 Teniendo Node.js instalado en nuestro sistema, ejecutamos el comando `npx create-react-app` para crear el esqueleto de nuestra aplicación. Una vez descargados e instalados todos los paquetes nos queda algo como esto
 
-![Resultado del comando npx create-react-a](https://i.imgur.com/LV5hYY7.png)
+![Resultado del comando npx create-react-a´´](https://i.imgur.com/LV5hYY7.png)
 
-> Los elementos marcados con [*] los borramos porque elementos de la aplicación inicial de React y no los necesitamos.
+> Los elementos marcados con [*] los borramos porque son elementos de la aplicación inicial de React y no los necesitamos.
 
-Para conocer el funcionamiento de `create react app`, en su documentación encontraras información detallada. 
+En la documentación de `create-react-app` encontraras [información detallada sobre su funcionamiento](https://create-react-app.dev/).
+
 
 En cuanto a nuestra aplicación, así será la distribución del 
 
 ## 1. Directorio.
 
-Teniendo como referencia la estrutura básica. Recordemos nuestro problemas antes de empezar. Nuestra aplicación debe poder, 
+Teniendo como referencia la estrutura básica. [Recordemos nuestro problemas](Antes de empezar). Nuestra aplicación debe poder, 
 
 1. Personalizar la licencia
 2. Renderizar datos obtenidos de un formulario.
@@ -66,8 +70,91 @@ que creo que va a permitir navegar mejor entre archivos, y lo mejor de todo, nos
 
 Haremos algunos cambios, para manejar algunas partes de nuestra aplicación como páginas independientes. Para hacer esto tendremos primero que crear una barra de navegación que nos permita movernos entre páginas, resolviendo así el problema de 
 
-## La navegación
+## 2. La navegación
 
-*Imagina como harias para dividir tu aplicación en partes que puedan usarse en otra solo con copiar, pegar e importar.*
+Vamos a concentrarnos en nuestro componente *Navbar*, este será el encargado de manejar las rutas. 
 
-*...este capítulo se está escribiendo ⌨️*
+### a.
+
+Nos ubicamos en nuestro archivo `src/components/navbar/navbar.js` e importamos lo que vamos a necesitar
+
+![Importaciones del archivo](https://i.imgur.com/WX65TPj.png)
+
+Como puedes ver (I) importamos React para poder usar JSX y componentes de clase. Importamos tambien el componente `Link` de la librería [React Router](https://reactrouter.com/) *(Para hacer eso, en la raíz de nuestro directorio ejecutamos el comando `$ npm install react-router-dom@6`)*, para manejar la navegación entre páginas. Finalmente, importamos nuestro CSS.
+
+Vamos a ver el código.
+
+### b.
+
+![](https://i.imgur.com/Cwn2hpE.png)
+
+Creamos nuestro componente de clase y preparamos su constructor para recibir sus propiedades. Esta propiedades van a ser los botones de navegación, cada uno debe tener también su funcionalidad. Veamos.
+
+![](https://i.imgur.com/4iZSR8S.png)
+
+Lo que estamos haciendo es crear nuestro array de botones, y cada uno le damos un (I) `name`, que nos servirá para identificarlo luego, o para agregar un `<label>` HTML con el nombre de cada botón. Le damos un (II) `iconName`, para poder renderizar nuestros iconos usando la funcionalidad de Google Fonts, que nos permite hacerlo de esta forma
+
+```
+<span class="material-symbols-outlined">
+    home
+</span>
+```
+También le damos una propiedad `route` para poder usarla en nuestro componente `Link` (para poder usar este componente en nuestra aplicación tendremos que instalar antes la librería. Por ultimo, la función onClick, que terminará desapareciendo, por ahora nos ayudara a depurar nuestro código. 
+Ahora vamos a crear nuestra *Navbar*, 
+
+### c.
+
+![](https://i.imgur.com/WdZ92PB.png)
+
+Lo que estamos haciendo aqui es crear una función que contruya nuestra barra de navegación. Dentro de la funcion creamos una constante `navItem`, en donde usamos el método [`.map()` de Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map) para crear un contenedor para cada botón con su respectivo enlance. Nota cómo usamos las propiedades de los botones que creamos anteriormente. Luego, nuestra función `renderNavbar` crea un contenedor para todos los botones y los insertamos allí. Nuestro método `render()` devolverá el resultado de nuestra función, y finalemente, exportamos el componente. 
+
+Hasta este punto, nuestra *Navbar* no funciona. Y esto es porque nos falta hacer un par de cosas antes. Veamos. 
+
+### d.
+
+Vamos a nuestro archivo `src/index.js` y lo madificamos para que se vea así
+
+![](https://i.imgur.com/dRcJUFm.png)
+
+Los primeros dos *imports* resaltados corresponden a utilidades de la librería React Router. Lo demás es nuestro CSS y los componentes de nuestra aplicación (también vemos la funcionalidad `reportWebVitals` que se crea por defecto con la aplicación React, que nos ayuda a depurar nuestro código). Entre las lineas 18 a 31 lo que estamos haciendo es (I) crear un componente `BrowserRouter` (lo que hace la libreria React Router es básicamente manejar la URL del navegador, permitiendonos modificarla, por ejemplo). Luego, (II) creamos una ruta padre para nuestra `<App />`, así nuestra página de inicio será por ejemplo `http://localhost:3000/`. (III) Dentro de nuestra ruta padre podemos insertar rutas hija que creamos dentro del directorio 'src/routes/' y que se ven asi,
+
+![](https://i.imgur.com/c5SL0sw.png)
+
+para lograr que las demás páginas tengan como ruta, por ejemplo `http://localhost:3000/saved` y así poder navegar entre una y otra (cómo habras notado, la página *saved* es bastante sencilla. Por ahora todas las demás se ven así; lo unico que cambia es el contenido del `h1`, esto es para saber que nuestras rutas están funcionando, luego le daremos el contenido final). (IV) También creamos una ruta especial 
+
+```
+<Route 
+    path="*"
+    element={<NotFound />}
+/>
+```
+
+Que lo que hace es que cuando la ruta de nuestro navegador no coincida con ninguna de las que están dentro del `BrowserRouter`, nos lleve a una página 404, que creamos dentro del directorio `src/`, y que se ve así
+
+![](https://i.imgur.com/LcIwejx.png)
+
+### e.
+
+Si pruebas darle click a los botones de la barra de navegación, verás que no funciona. Y esto es porque nos falta un componente fundamental que nos proporciona React Router para actualizar solo la parte de la interfaz que necesitamos, manteniendo el layout principal intacto, eliminando el parpadeo de la pantalla. Para hacer esto, vamos a nuestro `src/App.js` y lo modificamos para que se vea asi 
+
+![](https://i.imgur.com/wwWVDJV.png)
+
+Lo primero que hacemos es importar el componente, y todo lo demás que ya sabemos. Y agregamos el componente encima y debajo de los demás componente que tenga nuestra aplicación. Piensa que todos los componentes que no sean el `<Outlet />` se mantendran iguales entre páginas y cualquier página que que sea hija de nuestro componente `<App />` (recuerda nuestro *src/index.js*), se renderizará dentro del `<Outlet />`.
+
+Ahora, si pruebas a navegar verás que funciona, y la barra de navegación se mantiene sin refrescar entre cambios de una página a otra.
+
+Este tutorial no esta pensado para hablar en detalle sobre CSS, por eso el estilo es a tu gusto. Solo te recomiendo que cuando lo hagas pienses como hacerlo *responsive* desde el inicio. (Lo que yo hago es diseñar primero la "versión mobil" y luego la voy escalando a pantallas más grande, donde todo cabe sin problemas). Puedes ver el que yo hice (provisionalmente) [aqui](https://github.com/Cocodrilette/licencia-de-perreo/blob/main/src/components/navbar/navbar.css), y copiarlo si quieres, recuerda que esto no afecta en nada a la lógica de nuestra aplicacíon, pero es importante que nuestra aplicacíon sea usable. 
+
+Mi *Navbar* se  ve asi en pantallas pequeñas
+
+![](https://i.imgur.com/cMeD3rm.png)
+
+y asi en pantallas grandes (escritorio)
+
+![](https://i.imgur.com/XwRbdaR.png)
+
+No te preocupes por como se ve ahora, poco a poco vamos a darle el estilo final.
+
+## Creando nuestra primera licencia
+
+*... este capitulo se está escribiendo ⌨️*

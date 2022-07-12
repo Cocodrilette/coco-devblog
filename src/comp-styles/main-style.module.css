@@ -3,7 +3,7 @@
 :root {
     --backgroun-color-light: rgb(240, 240, 240);
     --backgroun-color-dark: rgb(34, 34, 34);
-    --code-background-color: rgb(32, 32, 36);
+    --code-background-color: rgb(38, 50, 56);
 
     --secundary-color-light: rgb(175, 236, 224);
     --secundary-color-dark: rgb(24, 24, 66);
@@ -326,15 +326,21 @@ ul li a:hover {
     margin: 20px auto; 
 }
 
-.blogPostContent p > img {
-    background-color: red;
-}
-
 .blogPostContent code {
     font-size: 1.2em;
     background-color: var(--code-background-color);
     color: var(--font-color-dark);
     padding: 2px 7px;
+    border-radius: 5px;
+}
+
+.blogPostContent pre {
+    max-width: 100%;
+    overflow: auto;
+    font-size: 1em;
+    background-color: var(--code-background-color);
+    color: var(--font-color-dark);
+    padding: 15px 10px;
     border-radius: 5px;
 }
 
