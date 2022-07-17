@@ -1,9 +1,8 @@
 import * as React from "react"
 import {
   mainContainer,
-  mainTitle,
   mainContent,
-} from '../comp-styles/main-style.module.css'
+} from '../../styles/main.module.css'
 import Navbar from './navbar'
 import Header from './header'
 import { useStaticQuery, graphql } from "gatsby"
@@ -31,14 +30,13 @@ const Layout = ({ pageTitle, children }) => {
     <div className={mainContainer}>
       <title>{pageTitle + " - " + titleData.site.siteMetadata.title}</title>
       <Header></Header>
-      <main
-        className={mainContent}>
-        <h1 className={mainTitle}>
+      <Navbar></Navbar>
+      <main className={mainContent}>
+        <h1>
           {pageTitle}
         </h1>
         {children}
       </main>
-      <Navbar></Navbar>
     </div>
   )
 }

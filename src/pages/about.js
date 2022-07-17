@@ -1,29 +1,33 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import { contentParagraph, pageSubtitle } from '../comp-styles/main-style.module.css'
+import { divider } from '../../styles/main.module.css'
 
 const AboutPage = () => {
     return (
         <React.StrictMode>
             <Layout
                 pageTitle="About">
-                <p className={contentParagraph}>
-                    Hi, I'm Juan Fernando- Cocodriltte for the friends. I'm from Colombia and live in Medellín. I'm 21 years old and studying Law (Derecho) at Universidad de Antioquia and I'm about to start studying Systems Engineering at Universidad Nacional de Colombia.
-                </p>
-                <p className={contentParagraph}>
-                    I'm a frontend developer, and I'm currently working on this site. I'm currently learning React, Gatsby, Node.js, Next.js and Nest.js.
-                </p>
-                <p className={contentParagraph}>
-                    I'm also know a bit of Python and Django. I'm also know how to use Git and GitHub.
-                </p>
-                <p className={contentParagraph}>
-                    Also, I'm currently working on a paper about Smart Contracts from a legal perspective for my degree work. So, I needed to learn a lot of things about Web 3, Solidity, Ethereum, Blockchain, distributed systems, decentralized applications, and more.
-                </p>
-                <p className={contentParagraph}>
-                    <em>Down below you can find some of my projects. And the source code of this site and all my socials</em>
-                </p>
-
-                <h2 className={pageSubtitle}>
+                <section>
+                    <p>
+                        Hi, I'm Juan Fernando- Cocodriltte for the friends. I'm from Colombia and live in Medellín. I'm 21 years old and studying Law (Derecho) at Universidad de Antioquia and I'm about to start studying Systems Engineering at Universidad Nacional de Colombia.
+                    </p>
+                    <p>
+                        I'm a frontend developer, and I'm currently working on this site. I'm currently learning React, Gatsby, Node.js, Next.js and Nest.js.
+                    </p>
+                    <p>
+                        I'm also know a bit of Python and Django. I'm also know how to use Git and GitHub.
+                    </p>
+                    <p>
+                        Also, I'm currently working on a paper about Smart Contracts from a legal perspective for my degree work. So, I needed to learn a lot of things about Web 3, Solidity, Ethereum, Blockchain, distributed systems, decentralized applications, and more.
+                    </p>
+                    <p>
+                        <em>Down below you can find some of my projects. And the source code of this site and all my socials</em>
+                    </p>
+                </section>
+                
+                <div className={divider}></div>
+                
+                <h2>
                     Projects
                 </h2>
 
@@ -35,7 +39,7 @@ const AboutPage = () => {
                     <li>✅ <a href='https://boiling-crystal-newsprint.glitch.me' title='See on Glicth'>Abandoned blog</a> using Eleventy on Glitch</li>
                 </ul>
 
-                <h2 className={pageSubtitle}>
+                <h2>
                     My socials
                 </h2>
                 <ul>

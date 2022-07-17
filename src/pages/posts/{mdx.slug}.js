@@ -1,18 +1,21 @@
-import * as React from 'react'
-import Layout from '../../components/layout'
-import {
-  blogPostInfo,
-  blogPostPubInfo,
-  blogPostAuthor,
-  blogPostDescription,
-  blogPostContent,
-  blogPostFooter,
-  blogPostFigCaption,
-  divider
-} from '../../comp-styles/main-style.module.css'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Layout from '../../components/layout'
+import { graphql } from 'gatsby'
+import * as React from 'react'
+import {
+  postFooter,
+  infoSection,
+  postContent,
+  imageSection,
+  imageCaption,
+  infoSectionPara,
+  infoSectionParaAuthor,
+} from '../../../styles/markdown.module.css'
+import {
+  divider,
+  dividerSm,
+} from '../../../styles/main.module.css'
 
 const BlogPost = ({ data }) => {
 
@@ -22,21 +25,33 @@ const BlogPost = ({ data }) => {
   // for that node. 
 
   return (
+    // The comments below are for resalting the data rendered in the blog post
+    // So, if you see a comment that means that you can change this data
     <Layout pageTitle={data.mdx.frontmatter.name}>
-      <div className={blogPostInfo}>
-        <p className={blogPostPubInfo}>
-          Posted on {data.mdx.frontmatter.datePublished} by
-          <span className={blogPostAuthor}>
-            <a href={data.mdx.frontmatter.link} title="Go to Instagram">
-              {data.mdx.frontmatter.author}</a></span>
+
+      <section className={infoSection}>
+        <p className={infoSectionPara}>
+          Posted on
+          {/*  */}
+          {data.mdx.frontmatter.datePublished}
+          {/*  */}
+          by
+          {/*  */}
+          <span className={infoSectionParaAuthor}>
+            <a href={data.mdx.frontmatter.link} title="Go to your social">
+              {data.mdx.frontmatter.author}
+              {/*  */}
+            </a>
+          </span>
         </p>
-      </div>
-      <figure>
+      </section>
+
+      <figure className={imageSection}>
         <GatsbyImage
           image={image}
           alt={data.mdx.frontmatter.post_image_alt}
         />
-        <figcaption className={blogPostFigCaption}>
+        <figcaption className={imageCaption}>
           Photo Credit:{" "}
           <a
             href={data.mdx.frontmatter.post_image_credit_link}
@@ -45,19 +60,21 @@ const BlogPost = ({ data }) => {
           </a>
         </figcaption>
       </figure>
+
       <div className={divider}></div>
-      <p className={blogPostDescription}>
-        {data.mdx.frontmatter.description}
-      </p>
-      <div className={divider}></div>
-      <article className={blogPostContent}>
+
+
+      <div className={dividerSm}></div>
+
+      <article className={postContent}>
+        <p>{data.mdx.frontmatter.description}</p>
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>
+        <div className={postFooter}>
+          Last update on {data.mdx.parent.modifiedTime}
+        </div>
       </article>
-      <div className={blogPostFooter}>
-        Last update on {data.mdx.parent.modifiedTime}
-      </div>
     </Layout>
   )
 }

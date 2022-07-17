@@ -1,14 +1,12 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
 import {
-    postArticle,
-    listItem,
-    listPostsName,
-    postDate,
-    listAuthor,
-    listPostDescription,
-    postInfo
-} from '../../comp-styles/main-style.module.css'
+    postCardLg,
+    cardTitleLg,
+    cardInfoLg,
+    cardParaLg,
+    cardDescriptionLg
+} from '../../../styles/posts.module.css'
 import { graphql, Link } from 'gatsby'
 
 const PostsPage = ({ data }) => {
@@ -17,22 +15,17 @@ const PostsPage = ({ data }) => {
     // CHECK IT OUT
     const postsList = data.allMdx.nodes.map(post => {
         return (
-            <article className={postArticle} key={post.id}>
-                <div className={listItem}>
-                    <span className={postDate}>
-                        {post.frontmatter.datePublished}
-                    </span>
-                    <h3 className={listPostsName}>
-                        <Link to={`/posts/${post.slug}`}>
-                            {post.frontmatter.name}
-                        </Link>
-                    </h3>
-                </div>
-                <div className={postInfo}>
-                    <p className={listAuthor}>
-                        Posted by {post.frontmatter.author}
+            <article className={postCardLg} key={post.id}>
+                <h3 className={cardTitleLg}>
+                    <Link to={`/posts/${post.slug}`}>
+                        {post.frontmatter.name}
+                    </Link>
+                </h3>
+                <div className={cardInfoLg}>
+                    <p className={cardParaLg}>
+                        Posted on {post.frontmatter.datePublished} by {post.frontmatter.author}
                     </p>
-                    <p className={listPostDescription}>
+                    <p className={cardDescriptionLg}>
                         {post.frontmatter.description}
                     </p>
                 </div>

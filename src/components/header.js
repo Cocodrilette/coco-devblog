@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import { siteHeader } from '../comp-styles/main-style.module.css'
 import { useStaticQuery, graphql } from 'gatsby'
+import { headerContent } from '../../styles/header.module.css'
 
 function Header() {
     const titleData = useStaticQuery(graphql`
@@ -16,14 +15,10 @@ function Header() {
         `)
 
     return (
-        <header className={siteHeader}>
-            <div>
+        <header>
+            <div className={headerContent}>
                 <Link to="/" title='Go to home'>
-                    <StaticImage
-                        src='../images/logo.png'
-                        alt='A very cool cyberpunk dude with a very fancy glasses sitting on the floor using a very cool computer'
-                    />
-                    {titleData.site.siteMetadata.title}
+                    /{titleData.site.siteMetadata.title}
                 </Link>
             </div>
         </header>

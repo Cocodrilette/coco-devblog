@@ -1,65 +1,90 @@
-COMPONENTS CLASS NAMES
+  REFERENCIA PARA LAS CLASES EN CSS
+//---------------------------------//
 
-logo del header <StaticImage>
-	> headerLogo
----
-contenedor principal <div>
-	> mainContainer
----
-titulo principal <h1>
-	> mainTitle
----
-contenedor del contenido principal <main>
-	> mainContent
----
-parrafo de contenido <p>
-	> contentParagraph
----
-barra de navegación (nav) <nav>
-	> navBar
----
-item de la barra de la nav <li>
-	> navbarItem
----
-lista de posts <article>
-	> postArticle
----
-item de lista <article> > <div>
-	> listItem
----
-titulo del post en la lista <h3> > <a>
-	> listPostsName
----
-titulo del post en la lista <h3>
-	> postListName
----
-pubDate en la lista <span>
-	> postDate
----
-info sobre autor y descripcion en la lista <div>
-	> postInfo
----
-nombre del author en la lista <p>
-	> listAuthor
----
-descripcion del post en la lista <p>
-	> listPostDescription
----
-icono de cambio de teme <div>
-	> themeToggle
----
-contenedor de infor del post <div>
-	> blogPostInfo
----
+Contenedor principal (contiene el header y la navbar) => 
+	[div] mainContainer   
 
-info de publicacion del post <p>
-	> blogPostPubInfo
----
-nombre del autor en el post <p> > <span>
-	> blogPostAuthor
----
-contenedor de la image en el post <figure>
-	> blogPostFigure
----
-creditos al autor de la imagen en el post <figcaption>
-	> blogPostFigCaption
+//---------------------------------//
+
+Contenedor dentro del principal(contiene solo el contenido) =>
+	[div] mainContent
+
+//---------------------------------//
+
+Titulo de la página =>
+	[h1] mainTitle
+
+//---------------------------------//
+
+Header de la página => 
+	[header] = header
+
+//---------------------------------//
+
+Contenedor dentro del header =>
+	[div] headerContent
+
+//---------------------------------//
+
+Barra de navegación =>
+	[nav] navbarContainer
+
+//---------------------------------//
+
+Nombre de la marca => 
+	[div] navbarBrand
+
+//---------------------------------//
+
+navbar Item =>
+	[li] navbarItem
+
+//---------------------------------//
+
+Link del navbar item =>
+	[Link] navbarItemLink
+
+//---------------------------------//
+
+Imagen principal del home => 
+	[figure] imageSection
+
+//---------------------------------//
+
+Creditos para la imagen principal =>
+	[figcaption] => ImageCaption
+
+//---------------------------------//
+
+section con información sobre un post =>
+	[section] infoSection
+
+//---------------------------------//
+
+parrafo de section de información =>
+	[p] infoSectionPara
+
+//---------------------------------//
+
+nombre del author en seccion de informacion => [span > a] infoSectionParaAuthor
+
+//---------------------------------//
+
+<404 =>
+
+contenedor principal =>
+	[main] mainContainer404
+
+//---------------------------------//
+
+titulo principal => 
+	[h1] h1NotFound
+
+//---------------------------------//
+
+texto informativo => 
+	[p] paraNotFound
+
+					/404>
+
+//---------------------------------//

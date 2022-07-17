@@ -1,6 +1,11 @@
-import React from "react"
 import { Link } from 'gatsby'
-import { navbar, navbarItem, navbarLinkText } from '../comp-styles/main-style.module.css'
+import React from "react"
+import { 
+    navbarItem, 
+    navbarBrand, 
+    navbarItemLink,
+    navbarContainer, 
+} from '../../styles/navbar.module.css'
 
 
 class Navbar extends React.Component {
@@ -17,7 +22,7 @@ class Navbar extends React.Component {
         this.navItem = this.state.navbarRoutes.map(function (route, id) {
             return (
                 <li key={id} className={navbarItem}>
-                    <Link to={route.path} className={navbarLinkText}>
+                    <Link to={route.path} className={navbarItemLink}>
                         {route.name}
                     </Link>
                 </li>
@@ -27,7 +32,8 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className={navbar}>
+            <nav className={navbarContainer}>
+            <div className={navbarBrand}>Under<span>B</span></div>
                 {this.navItem}
             </nav>
         )

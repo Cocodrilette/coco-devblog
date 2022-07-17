@@ -1,13 +1,15 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import { contentParagraph, divider } from '../comp-styles/main-style.module.css'
+import {
+    divider
+} from '../../styles/main.module.css'
 
 const AboutPage = () => {
     return (
         <React.StrictMode>
             <Layout
                 pageTitle="Resources">
-                <p className={contentParagraph}>
+                <p>
                     I have a lot of resource that I have amassed over the time. Down below you can find a link to my library on Google Drive, and some others recomendations divided by category.
                 </p>
                 <div className={divider}></div>
