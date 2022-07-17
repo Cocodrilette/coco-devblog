@@ -1,0 +1,67 @@
+:root {
+    --primary-color: #0B2027;
+    --secondary-color: #F7CB15;
+    --tertiary-color: #5C0029;
+
+    --font-color: #C9C9C9;
+    --font-muted-color: #64717D;
+    --font-accent-color: #92A2B1;
+
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+.navbarBrand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    margin-bottom: 4rem;
+    color: var(--font-color);
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.navbarBrand > span {
+    color: var(--secondary-color);
+}
+
+.navbarItem img {
+    height: 35px;
+    width: 35px;
+    margin-right: 1rem;
+}
+
+.navbarItem {
+    display: inline-flex;
+    align-items: center;
+    width: 120px;
+    text-align: left;
+    list-style: none;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 1.5rem;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.navbarItem:hover{
+    color: var(--black);
+    margin-left: 10px;
+    background-color: var(--secondary-color);
+    box-shadow: .5px .5px 5px var(--secondary-color);
+}
+
+.navbarItem:hover a {
+    color: var(--black);
+    padding-left: 5px;
+    border: none !important;
+}
+
+.navbarItem > a{
+    color: var(--font-color);
+    text-decoration: none;
+
+    transition: all 0.3s ease-in-out;
+}

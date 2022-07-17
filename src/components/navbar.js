@@ -1,11 +1,14 @@
+import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import React from "react"
 import { 
     navbarItem, 
     navbarBrand, 
     navbarItemLink,
-    navbarContainer, 
 } from '../../styles/navbar.module.css'
+import {
+    navbarContainer
+} from '../../styles/main.module.css'
 
 
 class Navbar extends React.Component {
@@ -13,10 +16,10 @@ class Navbar extends React.Component {
         super(props);
         this.state = {
             navbarRoutes: [
-                { name: "Home", path: "/" },
+                { name: "Home", path: "/"},
                 { name: "Posts", path: "/posts" },
                 { name: "About", path: "/about" },
-                { name: "Resources", path: "/resources" },
+                { name: "Resources", path: "/resources"},
             ],
         };
         this.navItem = this.state.navbarRoutes.map(function (route, id) {
@@ -33,7 +36,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className={navbarContainer}>
-            <div className={navbarBrand}>Under<span>B</span></div>
+            <div className={navbarBrand}>under<span>B</span></div>
                 {this.navItem}
             </nav>
         )

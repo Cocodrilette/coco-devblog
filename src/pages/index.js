@@ -1,24 +1,22 @@
 // Step 1: Import React
 import * as React from 'react'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
-import { 
-  imageSection, 
-  imageCaption, 
-  divider } from '../../styles/main.module.css'
+// import { StaticImage } from 'gatsby-plugin-image'
+import {
+  mediaSection,
+  mediaCaption,
+  divider
+} from '../../styles/main.module.css'
 
 // Step 2: Define your component
 const IndexPage = () => {
   return (
     <React.StrictMode>
       <Layout pageTitle="Home">
-        <figure className={imageSection}>
-          <StaticImage
-            src='../images/diane-picchiottino-FBPzc81dwDw-unsplash.jpg'
-            alt='A very cool cyberpunk dude with a very fancy glasses sitting on the floor using a very cool computer'
-          />
-          <figcaption className={imageCaption}>
-            Photo Credit:{" "}
+        <figure className={mediaSection}>
+          <iframe src="https://www.youtube.com/embed/saGYMhApaH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <figcaption className={mediaCaption}>
+            Credits:{" "}
             <a
               href='https://unsplash.com/es/@diane_soko'
               title="Go to the image source">

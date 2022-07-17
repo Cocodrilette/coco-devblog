@@ -10,7 +10,6 @@ import {
   imageSection,
   imageCaption,
   infoSectionPara,
-  infoSectionParaAuthor,
 } from '../../../styles/markdown.module.css'
 import {
   divider,
@@ -31,18 +30,16 @@ const BlogPost = ({ data }) => {
 
       <section className={infoSection}>
         <p className={infoSectionPara}>
-          Posted on
+          Posted on {' '}
           {/*  */}
-          {data.mdx.frontmatter.datePublished}
+          {data.mdx.frontmatter.datePublished} {' '}
           {/*  */}
-          by
+          by {' '}
           {/*  */}
-          <span className={infoSectionParaAuthor}>
             <a href={data.mdx.frontmatter.link} title="Go to your social">
               {data.mdx.frontmatter.author}
               {/*  */}
             </a>
-          </span>
         </p>
       </section>
 
@@ -62,12 +59,10 @@ const BlogPost = ({ data }) => {
       </figure>
 
       <div className={divider}></div>
-
-
-      <div className={dividerSm}></div>
-
+      
       <article className={postContent}>
         <p>{data.mdx.frontmatter.description}</p>
+      <div className={dividerSm}></div>
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>
