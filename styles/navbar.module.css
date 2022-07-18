@@ -33,93 +33,47 @@
 } */
 
 .navbarBrand {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: var(--primary-color);
+    margin: 0 0 3rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60px;
-    margin-bottom: 4rem;
-    color: var(--font-color);
-    font-size: 2.2rem;
-    font-weight: 500;
+    font-size: 2rem;
+    color: var(--font-accent-color);
 }
 
-.navbarBrand>span {
+.navbarBrand>span{
     color: var(--secondary-color);
 }
 
 .navbarItemsContainer {
-    position: sticky;
-    top: 124px;
-    z-index: 2;
     display: inline-flex;
     flex-direction: column;
     align-items: left;
     width: 150px;
     list-style: none;
-
 }
 
 .navbarItem {
+    text-align: left;
     font-size: 1.3rem;
     margin-bottom: 20px;
     padding: 5px;
-    border-radius: 1.5rem;
     transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid var(--font-muted-color);
 }
-
-/* .navbarItem:nth-child(2) {
-    background-color: var(--secondary-color);
-    box-shadow: .5px .5px 5px var(--secondary-color);
-
-    animation: shake infinite 1s ease-in-out;
-}
-
-.navbarItem:nth-child(2) > a {
-    margin-left: 10px;
-    color: var(--black);
-}
-
-.navbarItem:nth-child(2):hover {
-    margin-left: 0;
-} */
 
 .navbarItem:hover {
-    color: var(--black);
-    margin-left: 10px;
-    background-color: var(--secondary-color);
-    box-shadow: .5px .5px 5px var(--secondary-color);
+    color: var(--font-accent-color);
+    border-color: var(--white);
 }
 
-.navbarItem:hover a {
-    color: var(--black);
-    padding-left: 5px;
+.navbarItemLink {
+    color: var(--font-color);
+}
+
+.navbarItemLink:hover {
+    color: var(--white);
     border: none !important;
 }
 
-.navbarItem>a {
-    color: var(--font-color);
-    text-decoration: none;
-
-    transition: all 0.3s ease-in-out;
-}
-
-@media screen and (max-width: 800px) {
-    .navbarBrand {
-        font-size: 1.8rem;
-    }
-
-    .navbarItem {
-        font-size: 1.1rem;
-        padding: 3px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .navbarItem {
-        background-color: antiquewhite;
-    }
-}

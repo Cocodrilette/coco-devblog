@@ -1,4 +1,3 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 import React from "react"
 import { 

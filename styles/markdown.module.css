@@ -1,0 +1,39 @@
+:root {
+    --primary-color: #0B2027;
+    --secondary-color: #F7CB15;
+    --tertiary-color: #5C0029;
+
+    --font-color: #C9C9C9;
+    --font-muted-color: #64717D;
+    --font-accent-color: #92A2B1;
+
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+.postFooter {
+    color: var(--font-color);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    border-top: 2px solid var(--font-accent-color);
+}
+
+.postContent table {
+    justify-content: space-between;
+    border: 2px solid var(--font-muted-color);
+    margin: 1.5rem auto;
+    border-collapse: collapse;
+    width: 50%;
+    color: var(--font-color);
+}
+
+.postContent table thead{
+    line-height: 2rem;
+    background-color: var(--font-muted-color);
+}
+
+.postContent table tbody tr{
+    text-align: center;
+    line-height: 2rem;
+}
