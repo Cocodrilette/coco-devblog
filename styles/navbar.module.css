@@ -11,7 +11,32 @@
     --white: #FFFFFF;
 }
 
+/* @keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(1px);
+    }
+    40% {
+        transform: translateY(-1px);
+    }
+    60% {
+        transform: translateX(1px);
+    }
+    80% {
+        transform: translateY(-1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} */
+
 .navbarBrand {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,31 +47,47 @@
     font-weight: 500;
 }
 
-.navbarBrand > span {
+.navbarBrand>span {
     color: var(--secondary-color);
 }
 
-.navbarItem img {
-    height: 35px;
-    width: 35px;
-    margin-right: 1rem;
+.navbarItemsContainer {
+    position: sticky;
+    top: 124px;
+    z-index: 2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: left;
+    width: 150px;
+    list-style: none;
+
 }
 
 .navbarItem {
-    display: inline-flex;
-    align-items: center;
-    width: 120px;
-    text-align: left;
-    list-style: none;
     font-size: 1.3rem;
     margin-bottom: 20px;
     padding: 5px;
     border-radius: 1.5rem;
-
     transition: all 0.2s ease-in-out;
 }
 
-.navbarItem:hover{
+/* .navbarItem:nth-child(2) {
+    background-color: var(--secondary-color);
+    box-shadow: .5px .5px 5px var(--secondary-color);
+
+    animation: shake infinite 1s ease-in-out;
+}
+
+.navbarItem:nth-child(2) > a {
+    margin-left: 10px;
+    color: var(--black);
+}
+
+.navbarItem:nth-child(2):hover {
+    margin-left: 0;
+} */
+
+.navbarItem:hover {
     color: var(--black);
     margin-left: 10px;
     background-color: var(--secondary-color);
@@ -59,9 +100,26 @@
     border: none !important;
 }
 
-.navbarItem > a{
+.navbarItem>a {
     color: var(--font-color);
     text-decoration: none;
 
     transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+    .navbarBrand {
+        font-size: 1.8rem;
+    }
+
+    .navbarItem {
+        font-size: 1.1rem;
+        padding: 3px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navbarItem {
+        background-color: antiquewhite;
+    }
 }

@@ -1,0 +1,10 @@
+
+
+.noDecorationList{
+    list-style: none;
+}
+
+.noDecorationList li{
+    margin-left: -1.5rem;
+    margin-bottom: 10px;
+}

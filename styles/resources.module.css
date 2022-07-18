@@ -1,0 +1,51 @@
+:root {
+    --primary-color: #0B2027;
+    --secondary-color: #F7CB15;
+    --tertiary-color: #5C0029;
+
+    --font-color: #C9C9C9;
+    --font-muted-color: #64717D;
+    --font-accent-color: #92A2B1;
+
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.specialUL {
+    list-style: none;
+}
+
+.specialUL li {
+    margin-left: -3rem;
+    margin-bottom: 10px;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.specialUL li:hover {
+    color: var(--white);
+}
+
+.specialUL li a {
+    padding: 3px 6px;
+    border-radius: .5rem;
+    color: var(--black);
+    background-color: var(--secondary-color);
+}
+
+.specialUL li a:hover {
+    border: none !important;
+}
+

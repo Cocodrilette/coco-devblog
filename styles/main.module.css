@@ -17,6 +17,7 @@
     0% {
         transform: translateY(100%);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -34,7 +35,13 @@ body {
     background-color: var(--primary-color);
 }
 
-h1, h2, h3, a, p {
+h1,
+h2,
+h3,
+a,
+p,
+.mainContent ol,
+.mainContent ul {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--font-color);
@@ -58,10 +65,17 @@ h3 {
     margin: 1rem 0 0.5rem 0;
 }
 
-p {
+p,
+.mainContent ol,
+.mainContent ul {
     margin: 0.7rem 0;
     font-size: 1.3rem;
     line-height: 2rem;
+}
+
+.mainContent ol,
+.mainContent ul {
+    margin-left: 3rem;
 }
 
 a {
@@ -95,9 +109,13 @@ a:hover {
 }
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     grid-column: 2 / 4;
     grid-row: 1;
     height: 60px;
+    background-color: var(--primary-color);
 }
 
 .navbarContainer {
@@ -142,7 +160,7 @@ a:hover {
 
 @media screen and (max-width: 1000px) {
     .mainContent {
-        margin: -20px 50px 150px 50px;
+        margin: -20px 30px 150px 30px;
     }
 }
 
@@ -150,14 +168,42 @@ a:hover {
     .mainContent {
         margin: -20px 20px 150px 20px;
     }
+
     .mainContainer {
-        grid-template-columns: minmax(180px, 200px) minmax(auto, 1fr);
+        grid-template-columns: minmax(150px, 170px) minmax(auto, 1fr);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        line-height: 1.7rem;
+        font-size: 1rem;
     }
 }
 
 /* Not finised responsives design */
 @media screen and (max-width: 700px) {
-    .navbarContainer{
-        margin-left: -100%;
+    .mainContainer {
+        grid-template-columns: 50px minmax(auto, 1fr);
+    }
+    p {
+        line-height: 1.7rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        height: 40px;
     }
 }

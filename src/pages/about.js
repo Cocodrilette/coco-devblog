@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import { divider } from '../../styles/main.module.css'
+import { noDecorationList } from '../../styles/about.module.css'
 
 const AboutPage = () => {
     return (
@@ -31,7 +32,7 @@ const AboutPage = () => {
                     Projects
                 </h2>
 
-                <ul>
+                <ul className={noDecorationList}>
                     <li>✅ <a href='https://github.com/Cocodrilette/coco-devblog' title='See on Github'>This site</a></li>
                     <li>✅ <a href='https://invincible-melted-headlight.glitch.me' title='See on Github'>Shooping List Web-App without backend</a>(using localstorage)</li>
                     <li>✅ <a href='https://github.com/Cocodrilette/moz-todo-react.git' title='See on Github'>To Do App </a>(using React)</li>
@@ -42,7 +43,7 @@ const AboutPage = () => {
                 <h2>
                     My socials
                 </h2>
-                <ul>
+                <ul className={noDecorationList}>
                     <li>🔆 <a href='https://www.instagram.com/cocodrilette/' title='Go to my Instagram'>Instagram</a></li>
                     <li>🔆 <a href='https://www.linkedin.com/in/juan-fernando-cogollo-doria-66890523b/' title='Go to my Linkedin'>Linkedin</a></li>
                     <li>🔆 <a href='https://github.com/Cocodrilette' title='Go to my Github'>GitHub</a></li>

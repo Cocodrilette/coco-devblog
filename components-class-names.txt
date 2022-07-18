@@ -56,6 +56,31 @@ Creditos para la imagen principal =>
 
 //---------------------------------//
 
+card de post toda la pantalla=> 
+	[div] postCardLg
+
+//---------------------------------//
+
+titulo de la carta LG =>
+	[h3] cardTitleLg
+
+//---------------------------------//
+
+informacion de la card LG => 
+	[div] cardInfoLg
+
+//---------------------------------//
+
+parrafo de la card LG =>
+	[p] cardParaLg
+
+//---------------------------------//
+
+descripcion de la card LG =>
+	[p] cardDescriptionLg
+
+//---------------------------------//
+
 section con información sobre un post =>
 	[section] infoSection
 
@@ -67,6 +92,16 @@ parrafo de section de información =>
 //---------------------------------//
 
 nombre del author en seccion de informacion => [span > a] infoSectionParaAuthor
+
+//---------------------------------//
+
+contenido del post =>
+	[div] postContent
+
+//---------------------------------//
+
+footer del post => 
+	[footer] postFooter
 
 //---------------------------------//
 

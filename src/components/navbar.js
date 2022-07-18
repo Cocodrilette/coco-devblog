@@ -5,6 +5,7 @@ import {
     navbarItem, 
     navbarBrand, 
     navbarItemLink,
+    navbarItemsContainer
 } from '../../styles/navbar.module.css'
 import {
     navbarContainer
@@ -37,7 +38,7 @@ class Navbar extends React.Component {
         return (
             <nav className={navbarContainer}>
             <div className={navbarBrand}>under<span>B</span></div>
-                {this.navItem}
+            <div className={navbarItemsContainer}>{this.navItem}</div>
             </nav>
         )
     }

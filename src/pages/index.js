@@ -1,7 +1,7 @@
 // Step 1: Import React
 import * as React from 'react'
 import Layout from '../components/layout'
-// import { StaticImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import {
   mediaSection,
   mediaCaption,
@@ -14,7 +14,10 @@ const IndexPage = () => {
     <React.StrictMode>
       <Layout pageTitle="Home">
         <figure className={mediaSection}>
-          <iframe src="https://www.youtube.com/embed/saGYMhApaH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <StaticImage
+            src='../images/adi-goldstein-EUsVwEOsblE-unsplash.jpg'
+            alt='adi-goldstein-EUsVwEOsblE-unsplash'
+          />
           <figcaption className={mediaCaption}>
             Credits:{" "}
             <a
