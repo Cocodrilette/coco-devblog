@@ -28,8 +28,8 @@
 }
 
 .specialUL li {
-    margin-left: -3rem;
-    margin-bottom: 10px;
+    margin-left: -2rem;
+    margin-bottom: 20px;
 
     transition: all 0.1s ease-in-out;
 }
@@ -38,14 +38,13 @@
     color: var(--white);
 }
 
-.specialUL li a {
-    padding: 3px 6px;
-    border-radius: .5rem;
-    color: var(--black);
-    background-color: var(--secondary-color);
+.specialUL li:hover a {
+    border-bottom: 2px solid var(--secondary-color);
 }
 
-.specialUL li a:hover {
-    border: none !important;
+.specialUL li a {
+    font-weight: 700;
+    font-size: 1.5rem;
 }
+
 

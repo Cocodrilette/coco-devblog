@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #0B2027;
+    --secondary-color: #F7CB15;
+    --tertiary-color: #5C0029;
+
+    --font-color: #C9C9C9;
+    --font-muted-color: #64717D;
+    --font-accent-color: #92A2B1;
+
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+.postCardLg {
+    border-bottom: 4px solid var(--white);
+    margin-bottom: 3rem;
+}

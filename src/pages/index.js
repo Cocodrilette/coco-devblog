@@ -3,9 +3,9 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import {
-  mediaSection,
   mediaCaption,
-  divider
+  divider,
+  blockquote,
 } from '../../styles/main.module.css'
 
 // Step 2: Define your component
@@ -13,7 +13,10 @@ const IndexPage = () => {
   return (
     <React.StrictMode>
       <Layout pageTitle="Home">
-        <figure className={mediaSection}>
+          <section className={blockquote}>
+            <em>Just read. No more.</em>
+          </section>
+        <figure>
           <StaticImage
             src='../images/adi-goldstein-EUsVwEOsblE-unsplash.jpg'
             alt='adi-goldstein-EUsVwEOsblE-unsplash'

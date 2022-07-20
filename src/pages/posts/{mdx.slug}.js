@@ -5,14 +5,11 @@ import { graphql } from 'gatsby'
 import * as React from 'react'
 import {
   postFooter,
-  infoSection,
   postContent,
-  infoSectionPara,
 } from '../../../styles/markdown.module.css'
 import {
   divider,
   dividerSm,
-  mediaSection,
   mediaCaption,
 } from '../../../styles/main.module.css'
 
@@ -57,8 +54,8 @@ const BlogPost = ({ data }) => {
     // So, if you see a comment that means that you can change this data
     <Layout pageTitle={data.mdx.frontmatter.name}>
 
-      <section className={infoSection}>
-        <p className={infoSectionPara}>
+      <section>
+        <p>
           Posted on {' '}
           {/*  */}
           {data.mdx.frontmatter.datePublished} {' '}
@@ -72,7 +69,7 @@ const BlogPost = ({ data }) => {
         </p>
       </section>
 
-      <figure className={mediaSection}>
+      <figure>
         <GatsbyImage
           image={image}
           alt={data.mdx.frontmatter.post_image_alt}

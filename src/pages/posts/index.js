@@ -2,10 +2,6 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import {
     postCardLg,
-    cardTitleLg,
-    cardInfoLg,
-    cardParaLg,
-    cardDescriptionLg
 } from '../../../styles/posts.module.css'
 import { graphql, Link } from 'gatsby'
 
@@ -16,16 +12,16 @@ const PostsPage = ({ data }) => {
     const postsList = data.allMdx.nodes.map(post => {
         return (
             <article className={postCardLg} key={post.id}>
-                <h3 className={cardTitleLg}>
+                <h3>
                     <Link to={`/posts/${post.slug}`}>
                         {post.frontmatter.name}
                     </Link>
                 </h3>
-                <div className={cardInfoLg}>
-                    <p className={cardParaLg}>
-                        Posted on {post.frontmatter.datePublished} by {post.frontmatter.author}
+                <div>
+                    <p>
+                        <em>Posted on {post.frontmatter.datePublished} by {post.frontmatter.author}</em>
                     </p>
-                    <p className={cardDescriptionLg}>
+                    <p>
                         {post.frontmatter.description}
                     </p>
                 </div>

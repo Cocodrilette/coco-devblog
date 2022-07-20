@@ -17,7 +17,8 @@ const AboutPage = () => {
                 </p>
                 <div className={divider}></div>
                 <ul className={specialUL}>
-                    <li><a href='https://drive.google.com/drive/folders/1otOO28ZKdApAtxJyNeKXHbSKBKeMGASR?usp=sharing' title='Go to Google Drive Directory'>Library.</a>
+                    <li><a href='https://drive.google.com/drive/folders/1otOO28ZKdApAtxJyNeKXHbSKBKeMGASR?usp=sharing' title='Go to Google Drive Directory'>
+                    Library</a>
                         {' '}Here you can find documents about Law (Derecho), Finances, Computation, Universal Literature, Politics Science, Economics, and some Programming languajes handbooks (about Python, PHP, Javascript, Node.js and more) <em>-credits to the author-</em>.
                     </li>
                 </ul>

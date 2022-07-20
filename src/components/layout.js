@@ -3,8 +3,7 @@ import {
   mainContainer,
   mainContent,
 } from '../../styles/main.module.css'
-import Navbar from './navbar'
-import Header from './header'
+import Navbar from "./navbar"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ pageTitle, children }) => {
@@ -28,7 +27,6 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div id='mainContainer' className={mainContainer}>
       <title>{pageTitle + " - " + titleData.site.siteMetadata.title}</title>
-      <Header></Header>
       <Navbar></Navbar>
       <main className={mainContent}>
         <h1>

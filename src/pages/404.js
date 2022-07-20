@@ -4,32 +4,36 @@ import {
   mainContainer404,
   h1NotFound,
   paraNotFound,
-  codeNotFound
+  mainContent
 } from '../../styles/404.module.css'
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={mainContainer404}>
+    <main className={mainContainer404}>
+      <div className={mainContent}>
       <title>Not found</title>
-      <h1 style={h1NotFound}>Page not found</h1>
-      <p style={paraNotFound}>
+      <h1 className={h1NotFound}>Page not found</h1>
+      <p className={paraNotFound}>
         Sorry{" "}
         <span role="img" aria-label="Pensive emoji">
           😔
         </span>{" "}
-        we couldn’t find what you were looking for.
+        that you were looking for doesn't exist.
         <br />
-        {process.env.NODE_ENV === "development" ? (
+        Maybe you should go {" "}
+        <br />
+        {/* {process.env.NODE_ENV === "development" ? (
           <>
             <br />
             Try creating a page in <code className={codeNotFound}>src/pages/</code>.
             <br />
           </>
-        ) : null}
+        ) : null} */}
         <br />
-        <Link to="/">Go home</Link>.
+        <Link to="/">Back To Home</Link>
       </p>
+      </div>
     </main>
   )
 }

@@ -50,19 +50,19 @@ p,
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin: 1rem 0 0.5rem 0;
+    margin: 2rem 0 1rem 0;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 700;
-    margin: 1rem 0 0.5rem 0;
+    margin: 3rem 0 1rem 0;
 }
 
 h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 1rem 0 0.5rem 0;
+    margin: 2rem 0 1rem 0;
 }
 
 p,
@@ -104,43 +104,84 @@ a:hover {
 
 .mainContainer {
     display: flex;
-}
-
-.header {
-    background-color: var(--primary-color);
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 .navbarContainer {
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
-    width: 20%;
     top: 0;
-    left: 0;
-    height: 100vh;
-    border-right: 2px solid var(--font-muted-color);
-    background-color: var(--primary-color);
     z-index: 3;
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--primary-color);
+    border-left: 2px solid var(--font-muted-color);
+    border-right: 2px solid var(--font-muted-color);
+    box-shadow: 2px 2px 10px rgba(51, 51, 51, 0.7);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    height: 45px;
+    width: 100%;
+    max-width: 700px;
+    border: 2px solid var(--font-muted-color);
+    background-color: var(--primary-color);
 }
 
 .mainContent {
-    display: flex;
-    flex-direction: column;
-    width: calc(80% - 2rem);
-    margin: 100px 2rem 150px calc(20% + 2rem);
-
+    margin-top: 80px;
+    max-width: 1000px;
+    margin-bottom: 150px;
+    padding: 0 1rem;
     animation: appear-from-bottom 0.5s ease-in-out;
 }
 
 .mediaCaption {
     margin-top: .3rem;
     color: var(--font-color);
+}
+
+.blockquote {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--secondary-color);
+    padding: 1rem .5rem;
+    color: var(--black);
+    background-color: var(--font-muted-color);
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p,
+    .mainContent ol,
+    .mainContent ul {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .mainContent {
+        margin-top: 50px;
+    }
 }
